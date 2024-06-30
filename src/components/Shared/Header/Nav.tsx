@@ -13,8 +13,8 @@ const Nav = () => {
 				sx={{
 					position: 'sticky',
 					top: 0,
-					zIndex: 100,
-					backgroundColor: 'primary.main',
+					zIndex: 999,
+					backgroundColor: '#f8f7ff',
 					display: { xs: 'none', sm: 'flex' },
 					borderBottom: '1px solid #455a6477',
 					mb: 2

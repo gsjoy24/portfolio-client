@@ -1,19 +1,22 @@
 import notFound from '@/assets/not-found.svg';
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const NotFoundPage = () => {
 	return (
 		<Stack
+			area-label='Page Not Found'
 			sx={{
 				display: 'flex',
 				flexDirection: 'column',
 				alignItems: 'center',
 				justifyContent: 'center',
-				gap: 3,
 				minHeight: 'calc(100vh - 64px)',
 				textAlign: 'center',
-				py: 5
+				pb: 2,
+				position: 'relative',
+				top: '-50px'
 			}}
 		>
 			<Box
@@ -26,11 +29,14 @@ const NotFoundPage = () => {
 			</Box>
 			<Box>
 				<Typography variant='h1' sx={{ fontWeight: 'bold', fontSize: { xs: '2.5rem', md: '3.5rem' } }}>
-					404 - Page Not Found
+					Page Not Found
 				</Typography>
 				<Typography sx={{ fontWeight: 'bold' }}>
 					The page you are looking for might have been removed or is temporarily unavailable.
 				</Typography>
+				<Button component={Link} href='/' sx={{ mt: 2 }}>
+					Go back to Home
+				</Button>
 			</Box>
 		</Stack>
 	);

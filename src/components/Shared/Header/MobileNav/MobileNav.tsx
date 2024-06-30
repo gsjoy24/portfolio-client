@@ -17,7 +17,7 @@ const MobileNav = () => {
 	};
 
 	const DrawerList = (
-		<Box sx={{ width: 350 }} role='presentation' px={2}>
+		<Box sx={{ width: 350, zIndex: 999 }} role='presentation' px={2}>
 			<Box
 				sx={{
 					display: 'flex',
