@@ -4,10 +4,11 @@ import { createTheme } from '@mui/material';
 export const theme = createTheme({
 	palette: {
 		primary: {
-			main: '#3a5a40'
+			main: '#0c1621'
 		},
 		secondary: {
-			main: '#1F2F27'
+			main: '#f5f5f5',
+			dark: '#f2e8cf'
 		}
 	},
 	components: {
@@ -18,7 +19,7 @@ export const theme = createTheme({
 			styleOverrides: {
 				root: {
 					textTransform: 'none',
-					background: 'primary.main'
+					background: 'secondary.main'
 				}
 			}
 		},
@@ -34,7 +35,7 @@ export const theme = createTheme({
 		},
 		MuiContainer: {
 			defaultProps: {
-				maxWidth: 'xl'
+				maxWidth: 'lg'
 			}
 		}
 	}

@@ -1,4 +1,3 @@
-import MobileNav from '@/components/Shared/Header/MobileNav/MobileNav';
 import Nav from '@/components/Shared/Header/Nav';
 import Providers from '@/lib/Providers/Providers';
 import { Container } from '@mui/material';
@@ -37,7 +36,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					<AppRouterCacheProvider>
 						<Container>
 							<Nav />
-							<MobileNav />
 							{children}
 						</Container>
 					</AppRouterCacheProvider>

@@ -1,22 +1,20 @@
 'use client';
-import { Button, Chip, IconButton, Stack } from '@mui/material';
+import { Button, IconButton, Stack } from '@mui/material';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
 import { CgMenuRightAlt } from 'react-icons/cg';
 import { CiLocationOn } from 'react-icons/ci';
-import { FaRegUser } from 'react-icons/fa';
 import { GiFlexibleLamp } from 'react-icons/gi';
-import { IoCartOutline, IoClose } from 'react-icons/io5';
+import { IoClose } from 'react-icons/io5';
 import { LuPhoneCall } from 'react-icons/lu';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import SocialSection from '../../SocialSection';
 
 const MobileNav = () => {
 	const [open, setOpen] = React.useState(false);
-	const cart = 2;
+
 	const mobileNavLinks = [
 		{ name: 'Home', href: '/' },
 		{ name: 'Products', href: '/products' },
@@ -140,12 +138,12 @@ const MobileNav = () => {
 					onClick={toggleDrawer(true)}
 					aria-label='open drawer'
 					sx={{
-						color: 'primary.main'
+						color: 'secondary.main'
 					}}
 				>
 					<CgMenuRightAlt size={32} />
 				</IconButton>
-				<Link href='/'>{/* <Image src={logo} alt='logo' width={60} height={60} /> */}ssds</Link>
+				<Link href='/'></Link>
 			</Stack>
 			<Drawer open={open} onClose={toggleDrawer(false)}>
 				{DrawerList}
