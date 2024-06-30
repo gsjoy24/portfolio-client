@@ -3,7 +3,7 @@ const LoadingCompo = () => {
 	return (
 		<div className='h-[90vh] w-full flex flex-col justify-center items-center gap-12'>
 			<svg className='loader' viewBox='0 0 48 30' width='48px' height='30px'>
-				<g fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1'>
+				<g fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='1'>
 					<g transform='translate(9.5,19)'>
 						<circle className='loader_tire' r='9' strokeDasharray='56.549 56.549'></circle>
 						<g className='loader_spokes-spin' strokeDasharray='31.416 31.416' strokeDashoffset='-23.562'>
