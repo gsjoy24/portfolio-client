@@ -1,7 +1,4 @@
-import MobileNav from '@/components/Shared/Header/MobileNav/MobileNav';
-import Nav from '@/components/Shared/Header/Nav';
 import Providers from '@/lib/Providers/Providers';
-import { Container } from '@mui/material';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import type { Metadata } from 'next';
 import { dm_sans } from './fonts';
@@ -34,13 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<Providers>
 			<html lang='en'>
 				<body className={dm_sans.className}>
-					<AppRouterCacheProvider>
-						<Container>
-							<Nav />
-							<MobileNav />
-							{children}
-						</Container>
-					</AppRouterCacheProvider>
+					<AppRouterCacheProvider>{children}</AppRouterCacheProvider>
 				</body>
 			</html>
 		</Providers>
