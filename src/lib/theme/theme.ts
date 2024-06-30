@@ -4,11 +4,10 @@ import { createTheme } from '@mui/material';
 export const theme = createTheme({
 	palette: {
 		primary: {
-			main: '#0c1621'
+			main: '#f8f7ff'
 		},
 		secondary: {
-			main: '#f5f5f5',
-			dark: '#f2e8cf'
+			main: '#132a13'
 		}
 	},
 	components: {
@@ -19,7 +18,7 @@ export const theme = createTheme({
 			styleOverrides: {
 				root: {
 					textTransform: 'none',
-					background: 'secondary.main'
+					background: 'primary.main'
 				}
 			}
 		},

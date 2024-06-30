@@ -1,25 +1,30 @@
 import XIcon from '@mui/icons-material/X';
-import { Box, Stack, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import Link from 'next/link';
-import { FaFacebookF, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa6';
 
 const SocialSection = () => {
 	const socialLinks = {
-		facebook: 'https://www.facebook.com/',
-		instagram: 'https://www.instagram.com/',
-		youtube: 'https://www.youtube.com/',
-		x: 'https://www.x.com/'
+		facebook: 'https://www.facebook.com/goursahajoy',
+		instagram: 'https://www.instagram.com/goursahajoy',
+		youtube: 'https://www.youtube.com/@goursahajoy',
+		x: 'https://www.x.com/goursahajoy',
+		linkedin: 'https://www.linkedin.com/in/goursahajoy'
 	};
+
 	const iconDesign =
-		'text-[20px] h-10 w-10 flex justify-center items-center bg-[#29A56C] hover:bg-[#004D29] duration-200 rounded-full text-white';
+		'text-[20px] h-10 w-10 flex justify-center items-center bg-[#132a13] hover:bg-[#fff] duration-200 rounded-full text-white hover:text-[#132a13] border border-[#132a13]';
 
 	return (
 		<>
-			<Typography variant='h6' gutterBottom>
-				Follow Us
+			<Typography variant='h6' my={2}>
+				Follow Me
 			</Typography>
 			<Stack direction='row' align-items='center' gap={1}>
+				<Link href={socialLinks.linkedin} className={iconDesign}>
+					<FaLinkedinIn />
+				</Link>
 				<Link href={socialLinks.facebook} className={iconDesign}>
 					<FaFacebookF />
 				</Link>

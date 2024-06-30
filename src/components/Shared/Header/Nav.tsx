@@ -1,17 +1,8 @@
+import { navLinks } from '@/constant';
 import { Stack, Typography } from '@mui/material';
 import Link from 'next/link';
 
 const Nav = () => {
-	const navLinks: {
-		title: string;
-		path: string;
-	}[] = [
-		{ title: 'Home', path: '/' },
-		{ title: 'About', path: '/about' },
-		{ title: 'Contact', path: '/contact' },
-		{ title: 'Services', path: '/services' }
-	];
-
 	return (
 		<>
 			<Stack
@@ -37,17 +28,14 @@ const Nav = () => {
 							fontWeight: '900',
 							color: 'secondary.main',
 							transition: 'color 0.2s',
-							fontSize: '2rem',
-							'&:hover': {
-								color: '#fff'
-							}
+							fontSize: '2rem'
 						}}
 					>
 						GSJoy
 					</Typography>
 				</Link>
 				<Stack direction='row' gap={3}>
-					{navLinks.map((link, index) => (
+					{navLinks?.map((link, index) => (
 						<Link key={index} href={link?.path}>
 							<Typography
 								aria-label={link?.title}
@@ -55,10 +43,22 @@ const Nav = () => {
 									fontWeight: '500',
 									transition: 'color 0.2s',
 									color: 'secondary.main',
+									position: 'relative',
+									'&::after': {
+										content: '""',
+										position: 'absolute',
+										bottom: '-5px',
+										left: 0,
+										right: 0,
+										transition: 'width 0.2s',
+										width: '0px',
+										height: '2px',
+										backgroundColor: '#000'
+									},
 									'&:hover': {
-										color: '#fff',
-										textDecoration: 'underline',
-										textUnderlineOffset: '5px'
+										'&::after': {
+											width: '100%'
+										}
 									}
 								}}
 							>
