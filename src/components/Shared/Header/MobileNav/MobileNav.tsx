@@ -1,20 +1,17 @@
 'use client';
 import { navLinks } from '@/constant';
-import { Button, IconButton, Stack, Typography } from '@mui/material';
+import { IconButton, Stack, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Link from 'next/link';
-import * as React from 'react';
+import { useState } from 'react';
 import { CgMenuRightAlt } from 'react-icons/cg';
-import { CiLocationOn } from 'react-icons/ci';
-import { GiFlexibleLamp } from 'react-icons/gi';
 import { IoClose } from 'react-icons/io5';
-import { LuPhoneCall } from 'react-icons/lu';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import SocialSection from '../../SocialSection';
 
 const MobileNav = () => {
-	const [open, setOpen] = React.useState(false);
+	const [open, setOpen] = useState<boolean>(false);
 	const toggleDrawer = (newOpen: boolean) => () => {
 		setOpen(newOpen);
 	};
