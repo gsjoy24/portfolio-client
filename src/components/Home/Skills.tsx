@@ -24,7 +24,7 @@ const Skills = ({ data }: { data: TProp }) => {
 					marginBottom: 4
 				}}
 			>
-				{title.map((el, i) => (
+				{title.map((el: string, i: number) => (
 					<motion.span
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
@@ -41,9 +41,9 @@ const Skills = ({ data }: { data: TProp }) => {
 
 			<Grid container>
 				<Grid item xs={12} md={6}>
-					<Typography variant='h5' sx={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 1 }}>
+					<Typography variant='h5' sx={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
 						<ImDisplay size={16} />
-						{'Frontend'.split(' ').map((el, i) => (
+						{'Frontend'.split(' ').map((el: string, i: number) => (
 							<motion.span
 								initial={{ opacity: 0 }}
 								whileInView={{ opacity: 1 }}
@@ -57,8 +57,8 @@ const Skills = ({ data }: { data: TProp }) => {
 							</motion.span>
 						))}
 					</Typography>
-					<Typography variant='body1'>
-						{data?.frontEndSkills.split(',').map((el, i) => (
+					<Box>
+						{data?.frontEndSkills.split(',').map((el: string, i: number) => (
 							<motion.span
 								initial={{ opacity: 0 }}
 								whileInView={{ opacity: 1 }}
@@ -71,7 +71,7 @@ const Skills = ({ data }: { data: TProp }) => {
 								<Chip variant='outlined' label={el} sx={{ m: 1 }} />
 							</motion.span>
 						))}
-					</Typography>
+					</Box>
 				</Grid>
 				<Grid
 					item
@@ -84,9 +84,9 @@ const Skills = ({ data }: { data: TProp }) => {
 						}
 					}}
 				>
-					<Typography variant='h5' sx={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 1 }}>
+					<Typography variant='h5' sx={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
 						<IoServerOutline size={16} />
-						{'Backend'.split(' ').map((el, i) => (
+						{'Backend'.split(' ').map((el: string, i: number) => (
 							<motion.span
 								initial={{ opacity: 0 }}
 								whileInView={{ opacity: 1 }}
@@ -101,7 +101,7 @@ const Skills = ({ data }: { data: TProp }) => {
 						))}
 					</Typography>
 					<Typography variant='body1'>
-						{data?.backEndSkills.split(',').map((el, i) => (
+						{data?.backEndSkills.split(',').map((el: string, i: number) => (
 							<motion.span
 								initial={{ opacity: 0 }}
 								whileInView={{ opacity: 1 }}

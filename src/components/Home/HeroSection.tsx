@@ -12,7 +12,7 @@ const sliderTextVariant = {
 		x: 0
 	},
 	animate: {
-		x: '-220%',
+		x: '-500%',
 		transition: {
 			repeat: Infinity,
 			duration: 20,
@@ -47,14 +47,14 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 							variant='h1'
 							sx={{
 								fontWeight: 'bold',
-								fontSize: { xs: '2.5rem', md: '4rem' },
+								fontSize: { xs: '2.5rem', md: '4.5rem' },
 								display: 'flex',
 								flexDirection: 'column',
 								gap: '0.5rem'
 							}}
 						>
 							<span className='text-[30px]'>
-								{'Hi there, I am'.split(' ').map((el, i) => (
+								{'Hi there, I am'.split(' ').map((el: string, i: number) => (
 									<motion.span
 										initial={{ opacity: 0 }}
 										whileInView={{ opacity: 1 }}
@@ -69,7 +69,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 								))}
 							</span>
 							<span>
-								{data?.name.split(' ').map((el, i) => (
+								{data?.name.split(' ').map((el: string, i: number) => (
 									<motion.span
 										initial={{ opacity: 0 }}
 										whileInView={{ opacity: 1 }}
@@ -85,7 +85,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 							</span>
 						</Typography>
 						<Typography variant='h2' sx={{ fontWeight: 'bold', fontSize: '1.5rem', mb: 3 }}>
-							{data.designation.split(' ').map((el, i) => (
+							{data.designation.split(' ').map((el: string, i: number) => (
 								<motion.span
 									initial={{ opacity: 0 }}
 									whileInView={{ opacity: 1 }}
@@ -102,6 +102,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 
 						{/* resume download and see button */}
 						<ButtonGroup
+							aria-label='Download or see resume'
 							component={motion.div}
 							initial={{
 								opacity: 0,
@@ -116,10 +117,10 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 								delay: 1
 							}}
 						>
-							<Button endIcon={<GoDownload />} href={downloadLink} download>
+							<Button aria-label='Download the resume' endIcon={<GoDownload />} href={downloadLink} download>
 								Resume
 							</Button>
-							<Button href={data?.resumeLink} target='_blank'>
+							<Button href={data?.resumeLink} target='_blank' aria-label='See the resume'>
 								<GoEye size={20} />
 							</Button>
 						</ButtonGroup>
@@ -137,7 +138,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 							scale: 1
 						}}
 						transition={{
-							duration: 1,
+							duration: 0.3,
 							delay: 0.5
 						}}
 					>
@@ -153,10 +154,11 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 				</Stack>
 			</Container>
 			<motion.div
-				className='text-[150px] font-bold absolute bottom-0 whitespace-nowrap opacity-15 overflow-visible -z-30 w-[50%]'
+				className='text-[200px] font-bold absolute bottom-0 whitespace-nowrap opacity-10  overflow-visible -z-30 w-[50%]'
 				variants={sliderTextVariant}
 				initial='initial'
 				animate='animate'
+				aria-hidden
 			>
 				{data?.name} <FaCode className='inline-block' /> {data?.designation}
 			</motion.div>
