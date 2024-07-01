@@ -99,12 +99,12 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 					</Box>
 					<Box component={motion.div} variants={textVariant} initial='initial' animate='animate' className='-z-40'>
 						<Image
-							priority={true}
+							aria-label={`Picture of ${data?.name}`}
 							src={data?.profilePicture}
 							alt={`Picture of ${data?.name}`}
-							width={400}
-							height={400}
-							className='rounded-[40%]'
+							width={350}
+							height={350}
+							className='rounded-[40px] w-[250px] sm:w-auto'
 						/>
 					</Box>
 				</Stack>
