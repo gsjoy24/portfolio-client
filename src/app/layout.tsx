@@ -1,6 +1,7 @@
 import Providers from '@/lib/Providers/Providers';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import type { Metadata } from 'next';
+import { Toaster } from 'react-hot-toast';
 import { dm_sans } from './fonts';
 import './globals.css';
 
@@ -31,7 +32,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<Providers>
 			<html lang='en'>
 				<body className={dm_sans.className}>
-					<AppRouterCacheProvider>{children}</AppRouterCacheProvider>
+					<AppRouterCacheProvider>
+						{children}
+						<Toaster
+							position='top-center'
+							toastOptions={{
+								duration: 3000,
+								style: {
+									background: '#023047',
+									color: '#fff'
+								}
+							}}
+						/>
+					</AppRouterCacheProvider>
 				</body>
 			</html>
 		</Providers>

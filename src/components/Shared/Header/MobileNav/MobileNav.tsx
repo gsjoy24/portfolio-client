@@ -1,5 +1,6 @@
 'use client';
 import { navLinks } from '@/constant';
+import { useGetProfileQuery } from '@/redux/api/apis';
 import { Container, IconButton, Stack, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -13,6 +14,7 @@ import SocialSection from '../../SocialSection';
 
 const MobileNav = () => {
 	const [open, setOpen] = useState<boolean>(false);
+	const { data, isLoading } = useGetProfileQuery({});
 	const toggleDrawer = (newOpen: boolean) => () => {
 		setOpen(newOpen);
 	};
@@ -119,7 +121,7 @@ const MobileNav = () => {
 					</Link>
 				))}
 			</Stack>
-			<SocialSection />
+			{!isLoading && <SocialSection socialLinks={data?.data?.socialLinks} />}
 		</Box>
 	);
 
