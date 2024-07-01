@@ -3,19 +3,19 @@ import { Stack, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FaFacebookF, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
-import { FaInstagram } from 'react-icons/fa6';
+import { FaGithub } from 'react-icons/fa6';
 
-const SocialSection = () => {
-	const socialLinks = {
-		facebook: 'https://www.facebook.com/goursahajoy',
-		instagram: 'https://www.instagram.com/goursahajoy',
-		youtube: 'https://www.youtube.com/@goursahajoy',
-		x: 'https://www.x.com/goursahajoy',
-		linkedin: 'https://www.linkedin.com/in/goursahajoy'
-	};
-
+type TProp = {
+	linkedin: string;
+	github: string;
+	x: string;
+	facebook: string;
+	youtube: string;
+};
+const SocialSection = ({ socialLinks }: { socialLinks: TProp }) => {
+	console.log(socialLinks);
 	const iconDesign =
-		'text-[20px] h-10 w-10 flex justify-center items-center bg-[#132a13] hover:bg-[#fff] duration-200 rounded-full text-white hover:text-[#132a13] border border-[#132a13]';
+		'text-[20px] h-10 w-10 flex justify-center items-center bg-[#023047] hover:bg-[#fff] duration-200 rounded-full text-white hover:text-[#023047] border border-[#023047]';
 
 	const textVariant = {
 		initial: {
@@ -47,27 +47,27 @@ const SocialSection = () => {
 				animate='animate'
 			>
 				<motion.div variants={textVariant} initial='initial' animate='animate'>
-					<Link href={socialLinks.linkedin} className={iconDesign}>
+					<Link href={socialLinks?.linkedin} className={iconDesign}>
 						<FaLinkedinIn />
 					</Link>
 				</motion.div>
 				<motion.div variants={textVariant} initial='initial' animate='animate'>
-					<Link href={socialLinks.facebook} className={iconDesign}>
+					<Link href={socialLinks?.facebook} className={iconDesign}>
 						<FaFacebookF />
 					</Link>
 				</motion.div>
 				<motion.div variants={textVariant} initial='initial' animate='animate'>
-					<Link href={socialLinks.instagram} className={iconDesign}>
-						<FaInstagram />
+					<Link href={socialLinks?.github} className={iconDesign}>
+						<FaGithub />
 					</Link>
 				</motion.div>
 				<motion.div variants={textVariant} initial='initial' animate='animate'>
-					<Link href={socialLinks.youtube} className={iconDesign}>
+					<Link href={socialLinks?.youtube} className={iconDesign}>
 						<FaYoutube />
 					</Link>
 				</motion.div>
 				<motion.div variants={textVariant} initial='initial' animate='animate'>
-					<Link href={socialLinks.x} className={iconDesign}>
+					<Link href={socialLinks?.x} className={iconDesign}>
 						<XIcon />
 					</Link>
 				</motion.div>

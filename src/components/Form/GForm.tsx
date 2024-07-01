@@ -23,11 +23,13 @@ const GForm = ({ children, onSubmit, resolver, resetForm, defaultValues, styleCl
 	}
 
 	const methods = useForm(formConfig);
+
 	const { handleSubmit, reset } = methods;
 	const submit: SubmitHandler<FieldValues> = (data) => {
 		onSubmit(data);
 		resetForm === true && reset();
 	};
+
 	return (
 		<FormProvider {...methods}>
 			<form onSubmit={handleSubmit(submit)} className={styleClasses}>
