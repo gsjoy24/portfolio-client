@@ -48,7 +48,7 @@ const About = ({ data }: { data: string }) => {
 					}}
 				>
 					<Typography
-						variant='h4'
+						variant='h3'
 						sx={{
 							fontWeight: 'bold',
 							marginBottom: 4

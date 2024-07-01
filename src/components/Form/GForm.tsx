@@ -26,8 +26,8 @@ const GForm = ({ children, onSubmit, resolver, resetForm, defaultValues, styleCl
 
 	const { handleSubmit, reset } = methods;
 	const submit: SubmitHandler<FieldValues> = (data) => {
+		reset();
 		onSubmit(data);
-		resetForm === true && reset();
 	};
 
 	return (

@@ -12,20 +12,18 @@ import { Box, Button, Container, Grid, Stack, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { FieldValues } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { HiOutlineMail } from 'react-icons/hi';
 import { SlPhone } from 'react-icons/sl';
 
 const ContactPage = () => {
 	const router = useRouter();
-	const [reset, setReset] = useState<boolean>(false);
 	const { data, isLoading } = useGetProfileQuery({});
 	const text =
 		"I'm always excited to connect with fellow developers, potential collaborators, and anyone interested in web development. Whether you have a project in mind, a question about my work, or just want to chat about the latest in tech, feel free to reach out!";
 
-	const onSubmit = async (data: any) => {
-		setReset(true);
+	const onSubmit = async (data: FieldValues) => {
 		emailjs.send(config.email_service_id, config.email_template_id, data, config.email_public_id).then(
 			(result) => {
 				if (result.status === 200) {
@@ -48,7 +46,8 @@ const ContactPage = () => {
 				minHeight: '90vh',
 				display: 'flex',
 				justifyContent: 'center',
-				alignItems: 'center'
+				alignItems: 'center',
+				py: 4
 			}}
 		>
 			<Grid container alignItems='center'>
@@ -149,7 +148,7 @@ const ContactPage = () => {
 							</motion.span>
 						))}
 					</Typography>
-					<GForm onSubmit={onSubmit} resetForm={reset} resolver={zodResolver(sendEmailSchema)}>
+					<GForm onSubmit={onSubmit} resolver={zodResolver(sendEmailSchema)}>
 						<Stack gap={2}>
 							<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
 								<GInput name='name' label='Name' />
