@@ -7,21 +7,6 @@ import Image from 'next/image';
 import { FaCode } from 'react-icons/fa6';
 import { GoDownload, GoEye } from 'react-icons/go';
 
-const textVariant = {
-	initial: {
-		x: -500,
-		opacity: 0
-	},
-	animate: {
-		x: 0,
-		opacity: 1,
-		transition: {
-			duration: 1,
-			staggerChildren: 0.2
-		}
-	}
-};
-
 const sliderTextVariant = {
 	initial: {
 		x: 0
@@ -29,7 +14,7 @@ const sliderTextVariant = {
 	animate: {
 		x: '-220%',
 		transition: {
-			repeat: 60,
+			repeat: Infinity,
 			duration: 20,
 			ease: 'linear',
 			repeatType: 'mirror' as const
@@ -57,38 +42,80 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 					justifyContent='space-between'
 					alignItems='center'
 				>
-					<Box component={motion.div} variants={textVariant} initial='initial' animate='animate'>
+					<Box>
 						<Typography
 							variant='h1'
-							component={motion.h1}
-							variants={textVariant}
-							initial='initial'
-							animate='animate'
 							sx={{
 								fontWeight: 'bold',
-								fontSize: { xs: '2.5rem', md: '4rem', display: 'flex', flexDirection: 'column' },
+								fontSize: { xs: '2.5rem', md: '4rem' },
+								display: 'flex',
+								flexDirection: 'column',
 								gap: '0.5rem'
 							}}
 						>
-							<motion.span variants={textVariant} initial='initial' animate='animate' className='text-[30px]'>
-								Hello there!
-							</motion.span>
-							<motion.span variants={textVariant} initial='initial' animate='animate'>
-								<span className='text-[30px]'>I&#39;m</span> {data?.name}
-							</motion.span>
+							<span className='text-[30px]'>
+								{'Hi there, I am'.split(' ').map((el, i) => (
+									<motion.span
+										initial={{ opacity: 0 }}
+										whileInView={{ opacity: 1 }}
+										transition={{
+											duration: 0.25,
+											delay: i / 10
+										}}
+										key={i}
+									>
+										{el}{' '}
+									</motion.span>
+								))}
+							</span>
+							<span>
+								{data?.name.split(' ').map((el, i) => (
+									<motion.span
+										initial={{ opacity: 0 }}
+										whileInView={{ opacity: 1 }}
+										transition={{
+											duration: 0.25,
+											delay: i / 10
+										}}
+										key={i}
+									>
+										{el}{' '}
+									</motion.span>
+								))}
+							</span>
 						</Typography>
-						<Typography
-							component={motion.h2}
-							variants={textVariant}
-							initial='initial'
-							animate='animate'
-							variant='h2'
-							sx={{ fontWeight: 'bold', fontSize: '1.5rem', mb: 3 }}
+						<Typography variant='h2' sx={{ fontWeight: 'bold', fontSize: '1.5rem', mb: 3 }}>
+							{data.designation.split(' ').map((el, i) => (
+								<motion.span
+									initial={{ opacity: 0 }}
+									whileInView={{ opacity: 1 }}
+									transition={{
+										duration: 0.25,
+										delay: i / 10
+									}}
+									key={i}
+								>
+									{el}{' '}
+								</motion.span>
+							))}
+						</Typography>
+
+						{/* resume download and see button */}
+						<ButtonGroup
+							component={motion.div}
+							initial={{
+								opacity: 0,
+								scale: 0
+							}}
+							whileInView={{
+								opacity: 1,
+								scale: 1
+							}}
+							transition={{
+								duration: 0.25,
+								delay: 1
+							}}
 						>
-							{data?.designation}
-						</Typography>
-						<ButtonGroup component={motion.div} variants={textVariant} initial='initial' animate='animate'>
-							{/* resume download and see button */}
 							<Button endIcon={<GoDownload />} href={downloadLink} download>
 								Resume
 							</Button>
@@ -97,7 +124,23 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 							</Button>
 						</ButtonGroup>
 					</Box>
-					<Box component={motion.div} variants={textVariant} initial='initial' animate='animate' className='-z-40'>
+					{/* image */}
+					<Box
+						className='-z-40'
+						component={motion.div}
+						initial={{
+							opacity: 0,
+							scale: 0
+						}}
+						whileInView={{
+							opacity: 1,
+							scale: 1
+						}}
+						transition={{
+							duration: 1,
+							delay: 0.5
+						}}
+					>
 						<Image
 							aria-label={`Picture of ${data?.name}`}
 							src={data?.profilePicture}
