@@ -1,3 +1,4 @@
+import Footer from '@/components/Shared/Footer';
 import MobileNav from '@/components/Shared/Header/MobileNav/MobileNav';
 import Nav from '@/components/Shared/Header/Nav';
 import { useGetProfileQuery } from '@/redux/api/apis';
@@ -7,6 +8,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 			<Nav />
 			<MobileNav />
 			{children}
+			<Footer />
 		</>
 	);
 };
