@@ -37,7 +37,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 						xs: 'column-reverse',
 						md: 'row'
 					}}
-					gap={4}
+					gap={7}
 					py={2}
 					justifyContent='space-between'
 					alignItems='center'
