@@ -39,7 +39,7 @@ const SocialSection = ({ socialLinks }: { socialLinks: TProp }) => {
 					animate={{ opacity: 1, scale: 1 }}
 					whileHover={{ scale: 1.1 }}
 					whileTap={{ scale: 0.9 }}
-					transition={{ duration: 0.5, delay: 0.2 }}
+					transition={{ duration: 0.5, delay: 0.4 }}
 				>
 					<Link target='_black' href={socialLinks?.linkedin} className={iconDesign}>
 						<FaLinkedinIn />
@@ -50,7 +50,7 @@ const SocialSection = ({ socialLinks }: { socialLinks: TProp }) => {
 					animate={{ opacity: 1, scale: 1 }}
 					whileHover={{ scale: 1.1 }}
 					whileTap={{ scale: 0.9 }}
-					transition={{ duration: 0.5, delay: 0.3 }}
+					transition={{ duration: 0.5, delay: 0.5 }}
 				>
 					<Link target='_black' href={socialLinks?.facebook} className={iconDesign}>
 						<FaFacebookF />
@@ -61,7 +61,7 @@ const SocialSection = ({ socialLinks }: { socialLinks: TProp }) => {
 					animate={{ opacity: 1, scale: 1 }}
 					whileHover={{ scale: 1.1 }}
 					whileTap={{ scale: 0.9 }}
-					transition={{ duration: 0.5, delay: 0.4 }}
+					transition={{ duration: 0.5, delay: 0.6 }}
 				>
 					<Link target='_black' href={socialLinks?.github} className={iconDesign}>
 						<FaGithub />
@@ -72,7 +72,7 @@ const SocialSection = ({ socialLinks }: { socialLinks: TProp }) => {
 					animate={{ opacity: 1, scale: 1 }}
 					whileHover={{ scale: 1.1 }}
 					whileTap={{ scale: 0.9 }}
-					transition={{ duration: 0.5, delay: 0.5 }}
+					transition={{ duration: 0.5, delay: 0.7 }}
 				>
 					<Link target='_black' href={socialLinks?.youtube} className={iconDesign}>
 						<FaYoutube />
@@ -83,7 +83,7 @@ const SocialSection = ({ socialLinks }: { socialLinks: TProp }) => {
 					animate={{ opacity: 1, scale: 1 }}
 					whileHover={{ scale: 1.1 }}
 					whileTap={{ scale: 0.9 }}
-					transition={{ duration: 0.5, delay: 0.6 }}
+					transition={{ duration: 0.5, delay: 0.8 }}
 				>
 					<Link target='_black' href={socialLinks?.x} className={iconDesign}>
 						<XIcon />

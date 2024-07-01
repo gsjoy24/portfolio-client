@@ -35,20 +35,14 @@ const MobileNav = () => {
 	};
 
 	const DrawerList = (
-		<Box
-			sx={{ width: 350, zIndex: 999 }}
-			role='presentation'
-			px={2}
-			component={motion.div}
-			variants={textVariant}
-			initial='initial'
-			animate='animate'
-		>
+		<Box sx={{ width: 350, zIndex: 999 }} role='presentation' px={2}>
 			<Box
 				component={motion.div}
-				variants={textVariant}
-				initial='initial'
-				animate='animate'
+				initial={{ x: -500, opacity: 0 }}
+				animate={{ x: 0, opacity: 1 }}
+				transition={{
+					duration: 1
+				}}
 				sx={{
 					display: 'flex',
 					justifyContent: 'space-between',
@@ -92,7 +86,7 @@ const MobileNav = () => {
 						color: 'secondary.main'
 					}}
 				>
-					<IoClose size={22} />
+					<IoClose size={25} />
 				</IconButton>
 			</Box>
 
@@ -102,15 +96,18 @@ const MobileNav = () => {
 					<Link key={index} href={link?.path} onClick={toggleDrawer(false)}>
 						<Stack
 							component={motion.div}
-							variants={textVariant}
-							initial='initial'
-							animate='animate'
+							initial={{ x: -500, opacity: 0 }}
+							animate={{ x: 0, opacity: 1 }}
+							transition={{
+								duration: 1,
+								delay: index * 0.2
+							}}
 							direction='row'
 							justifyContent='space-between'
 							align-items='center'
 							sx={{
 								transition: 'all 0.3s',
-								fontSize: 20,
+								fontSize: 24,
 								pb: '5px',
 								borderBottom: '1px solid #132a1346'
 							}}
