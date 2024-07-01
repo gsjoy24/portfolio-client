@@ -2,6 +2,7 @@ import { Box, Chip, Container, Grid, Stack, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import { ImDisplay } from 'react-icons/im';
 import { IoServerOutline } from 'react-icons/io5';
+import { MdOutlineCodeOff } from 'react-icons/md';
 type TProp = {
 	frontEndSkills: string;
 	backEndSkills: string;
@@ -39,8 +40,8 @@ const Skills = ({ data }: { data: TProp }) => {
 				))}
 			</Typography>
 
-			<Grid container>
-				<Grid item xs={12} md={6}>
+			<Grid container justifyContent='center'>
+				<Grid item xs={12} md={5}>
 					<Typography variant='h5' sx={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
 						<ImDisplay size={16} />
 						{'Frontend'.split(' ').map((el: string, i: number) => (
@@ -76,7 +77,7 @@ const Skills = ({ data }: { data: TProp }) => {
 				<Grid
 					item
 					xs={12}
-					md={6}
+					md={3}
 					sx={{
 						mt: {
 							xs: 3,
@@ -115,6 +116,49 @@ const Skills = ({ data }: { data: TProp }) => {
 							</motion.span>
 						))}
 					</Typography>
+				</Grid>
+				<Grid
+					item
+					xs={12}
+					md={4}
+					sx={{
+						mt: {
+							xs: 3,
+							md: 0
+						}
+					}}
+				>
+					<Typography variant='h5' sx={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+						<MdOutlineCodeOff size={16} />
+						{'Tools'.split(' ').map((el: string, i: number) => (
+							<motion.span
+								initial={{ opacity: 0 }}
+								whileInView={{ opacity: 1 }}
+								transition={{
+									duration: 0.25,
+									delay: i / 10
+								}}
+								key={i}
+							>
+								{el}
+							</motion.span>
+						))}
+					</Typography>
+					<Box>
+						{data?.tools.split(',').map((el: string, i: number) => (
+							<motion.span
+								initial={{ opacity: 0 }}
+								whileInView={{ opacity: 1 }}
+								transition={{
+									duration: 0.25,
+									delay: i / 10
+								}}
+								key={i}
+							>
+								<Chip variant='outlined' label={el} sx={{ m: 1 }} />
+							</motion.span>
+						))}
+					</Box>
 				</Grid>
 			</Grid>
 		</Container>

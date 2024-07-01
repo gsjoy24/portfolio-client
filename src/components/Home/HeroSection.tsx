@@ -15,7 +15,7 @@ const sliderTextVariant = {
 		x: '-500%',
 		transition: {
 			repeat: Infinity,
-			duration: 20,
+			duration: 30,
 			ease: 'linear',
 			repeatType: 'mirror' as const
 		}
