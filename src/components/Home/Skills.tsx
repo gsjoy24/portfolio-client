@@ -15,7 +15,7 @@ const Skills = ({ data }: { data: TProp }) => {
 		<Container
 			maxWidth='md'
 			sx={{
-				mt: 4
+				my: 4
 			}}
 		>
 			<Typography
@@ -101,7 +101,7 @@ const Skills = ({ data }: { data: TProp }) => {
 							</motion.span>
 						))}
 					</Typography>
-					<Typography variant='body1'>
+					<Box>
 						{data?.backEndSkills.split(',').map((el: string, i: number) => (
 							<motion.span
 								initial={{ opacity: 0 }}
@@ -115,7 +115,7 @@ const Skills = ({ data }: { data: TProp }) => {
 								<Chip variant='outlined' label={el} sx={{ m: 1 }} />
 							</motion.span>
 						))}
-					</Typography>
+					</Box>
 				</Grid>
 				<Grid
 					item

@@ -124,43 +124,56 @@ const MobileNav = () => {
 	);
 
 	return (
-		<Container>
-			<Stack
-				direction='row'
-				justifyContent='space-between'
-				alignItems='center'
-				gap={2}
-				sx={{ display: { xs: 'flex', sm: 'none' } }}
-				py={1}
+		<>
+			<Box
+				sx={{
+					position: 'sticky',
+					top: 0,
+					zIndex: 999,
+					backgroundColor: '#f8f7ff',
+					display: { xs: 'flex', sm: 'none' },
+					boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)'
+				}}
 			>
-				{/* text logo */}
-				<Link href='/'>
-					<Typography
-						aria-label='GSJoy Logo'
-						sx={{
-							fontWeight: '900',
-							color: 'secondary.main',
-							transition: 'color 0.2s',
-							fontSize: '2rem'
-						}}
+				<Container>
+					<Stack
+						direction='row'
+						justifyContent='space-between'
+						alignItems='center'
+						gap={2}
+						sx={{ display: { xs: 'flex', sm: 'none' } }}
+						py={1}
 					>
-						GSJoy
-					</Typography>
-				</Link>
-				<IconButton
-					onClick={toggleDrawer(true)}
-					aria-label='open drawer'
-					sx={{
-						color: 'secondary.main'
-					}}
-				>
-					<CgMenuRightAlt size={32} />
-				</IconButton>
-			</Stack>
+						{/* text logo */}
+						<Link href='/'>
+							<Typography
+								aria-label='GSJoy Logo'
+								sx={{
+									fontWeight: '900',
+									color: 'secondary.main',
+									transition: 'color 0.2s',
+									fontSize: '2rem'
+								}}
+							>
+								GSJoy
+							</Typography>
+						</Link>
+						<IconButton
+							onClick={toggleDrawer(true)}
+							aria-label='open drawer'
+							sx={{
+								color: 'secondary.main'
+							}}
+						>
+							<CgMenuRightAlt size={32} />
+						</IconButton>
+					</Stack>
+				</Container>
+			</Box>
 			<Drawer open={open} onClose={toggleDrawer(false)}>
 				{DrawerList}
 			</Drawer>
-		</Container>
+		</>
 	);
 };
 

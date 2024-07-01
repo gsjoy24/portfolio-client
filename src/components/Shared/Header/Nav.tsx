@@ -1,25 +1,21 @@
 import { navLinks } from '@/constant';
-import { Container, Divider, Stack, Typography } from '@mui/material';
+import { Box, Container, Divider, Stack, Typography } from '@mui/material';
 import Link from 'next/link';
 
 const Nav = () => {
 	return (
-		<>
+		<Box
+			sx={{
+				position: 'sticky',
+				top: 0,
+				zIndex: 999,
+				backgroundColor: '#f8f7ff',
+				display: { xs: 'none', sm: 'flex' },
+				boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)'
+			}}
+		>
 			<Container>
-				<Stack
-					direction='row'
-					justifyContent='space-between'
-					alignItems='center'
-					py={1}
-					sx={{
-						position: 'sticky',
-						top: 0,
-						zIndex: 999,
-						backgroundColor: '#f8f7ff',
-						display: { xs: 'none', sm: 'flex' },
-						mb: 2
-					}}
-				>
+				<Stack direction='row' justifyContent='space-between' alignItems='center' py={1}>
 					{/* text logo */}
 					<Link href='/'>
 						<Typography
@@ -70,8 +66,7 @@ const Nav = () => {
 					</Stack>
 				</Stack>
 			</Container>
-			<Divider />
-		</>
+		</Box>
 	);
 };
 
