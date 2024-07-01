@@ -14,9 +14,7 @@ const NotFoundPage = () => {
 				justifyContent: 'center',
 				minHeight: 'calc(100vh - 64px)',
 				textAlign: 'center',
-				pb: 2,
-				position: 'relative',
-				top: '-50px'
+				pb: 2
 			}}
 		>
 			<Box
