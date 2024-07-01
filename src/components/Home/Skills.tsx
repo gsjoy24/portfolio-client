@@ -1,4 +1,4 @@
-import { Box, Chip, Container, Grid, Stack, Typography } from '@mui/material';
+import { Box, Chip, Container, Grid, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import { ImDisplay } from 'react-icons/im';
 import { IoServerOutline } from 'react-icons/io5';
@@ -24,6 +24,7 @@ const Skills = ({ data }: { data: TProp }) => {
 					fontWeight: 'bold',
 					marginBottom: 4
 				}}
+				aria-label='List of technologies I am familiar with'
 			>
 				{title.map((el: string, i: number) => (
 					<motion.span
@@ -42,7 +43,11 @@ const Skills = ({ data }: { data: TProp }) => {
 
 			<Grid container justifyContent='center'>
 				<Grid item xs={12} md={5}>
-					<Typography variant='h5' sx={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+					<Typography
+						variant='h5'
+						sx={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}
+						aria-label='Frontend Technologies'
+					>
 						<ImDisplay size={16} />
 						{'Frontend'.split(' ').map((el: string, i: number) => (
 							<motion.span
@@ -85,7 +90,11 @@ const Skills = ({ data }: { data: TProp }) => {
 						}
 					}}
 				>
-					<Typography variant='h5' sx={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+					<Typography
+						variant='h5'
+						sx={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}
+						aria-label='Backend Technologies'
+					>
 						<IoServerOutline size={16} />
 						{'Backend'.split(' ').map((el: string, i: number) => (
 							<motion.span
@@ -128,7 +137,11 @@ const Skills = ({ data }: { data: TProp }) => {
 						}
 					}}
 				>
-					<Typography variant='h5' sx={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+					<Typography
+						variant='h5'
+						sx={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}
+						aria-label='Tools I use for development'
+					>
 						<MdOutlineCodeOff size={16} />
 						{'Tools'.split(' ').map((el: string, i: number) => (
 							<motion.span
