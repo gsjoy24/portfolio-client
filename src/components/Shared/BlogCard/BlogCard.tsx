@@ -68,7 +68,7 @@ const BlogCard = ({ blog, delay }: { blog: TBlog; delay: number }) => {
 				}}
 				className='flex justify-end'
 			>
-				<Button component={Link} href={`blog/${blog?._id}`}>
+				<Button component={Link} href={`blogs/${blog?._id}`}>
 					Explore
 				</Button>
 			</motion.div>

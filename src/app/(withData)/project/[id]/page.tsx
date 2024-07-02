@@ -34,8 +34,8 @@ const ProjectDetails = ({ params }: { params: { id: string } }) => {
 							fontWeight: 'bold',
 							my: 4,
 							fontSize: {
-								xs: '2.2rem',
-								md: '3rem'
+								xs: '1.6rem',
+								md: '2.2rem'
 							}
 						}}
 						aria-label={data?.data?.title}
