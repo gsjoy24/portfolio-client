@@ -1,11 +1,11 @@
-import { TProject } from '@/types';
+import { TBlog } from '@/types';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { IoMdOpen } from 'react-icons/io';
 
-const SingleProject = ({ project, delay }: { project: TProject; delay: number }) => {
+const BlogCard = ({ blog, delay }: { blog: TBlog; delay: number }) => {
 	return (
 		<Box
 			component={motion.div}
@@ -35,7 +35,7 @@ const SingleProject = ({ project, delay }: { project: TProject; delay: number })
 				boxShadow: 2
 			}}
 		>
-			<Image src={project?.image} alt='project image' height={340} width={340} />
+			<Image src={blog?.image} alt='blog image' height={340} width={340} />
 			<Typography
 				variant='h5'
 				sx={{
@@ -43,9 +43,9 @@ const SingleProject = ({ project, delay }: { project: TProject; delay: number })
 					my: 2,
 					fontSize: '1rem'
 				}}
-				arial-label={project?.title}
+				arial-label={blog?.title}
 			>
-				{project?.title.split(' ').map((el: string, i: number) => (
+				{blog?.title.split(' ').map((el: string, i: number) => (
 					<motion.span
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
@@ -59,34 +59,21 @@ const SingleProject = ({ project, delay }: { project: TProject; delay: number })
 					</motion.span>
 				))}
 			</Typography>
-			<Stack gap={2} direction='row'>
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{
-						duration: 0.25,
-						delay: 0.5
-					}}
-				>
-					<Button component={Link} href={project?.liveLink} endIcon={<IoMdOpen size={16} />}>
-						Live
-					</Button>
-				</motion.div>
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{
-						duration: 0.25,
-						delay: 0.7
-					}}
-				>
-					<Button component={Link} href={`project/${project?._id}`}>
-						See Details
-					</Button>
-				</motion.div>
-			</Stack>
+			<motion.div
+				initial={{ opacity: 0, y: 20 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{
+					duration: 0.25,
+					delay: 0.7
+				}}
+				className='flex justify-end'
+			>
+				<Button component={Link} href={`blog/${blog?._id}`}>
+					Explore
+				</Button>
+			</motion.div>
 		</Box>
 	);
 };
 
-export default SingleProject;
+export default BlogCard;

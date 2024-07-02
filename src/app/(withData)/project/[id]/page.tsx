@@ -10,7 +10,7 @@ import { MdOpenInNew } from 'react-icons/md';
 
 const ProjectDetails = ({ params }: { params: { id: string } }) => {
 	const { data, isLoading } = useGetProjectQuery(params?.id);
-	const description = data?.data?.description || '';
+	const description: string = data?.data?.description || '';
 	return isLoading ? (
 		<LoadingCompo />
 	) : (
