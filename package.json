@@ -19,6 +19,7 @@
     "@reduxjs/toolkit": "^2.2.5",
     "axios": "^1.7.2",
     "framer-motion": "^11.2.12",
+    "html-react-parser": "^5.1.10",
     "jwt-decode": "^4.0.0",
     "next": "14.0.3",
     "react": "^18",
