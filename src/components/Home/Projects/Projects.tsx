@@ -26,6 +26,7 @@ const Projects = () => {
 		<LoadingCompo />
 	) : (
 		<Container
+			id='projects'
 			maxWidth='md'
 			sx={{
 				my: 8
