@@ -4,13 +4,13 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const About = ({ data }: { data: string }) => {
-	const title = 'About  Me'.split('');
+	const title = 'About Me'.split('');
 	const content = data.split(' ');
 	return (
 		<Container
 			maxWidth='md'
 			sx={{
-				mt: 4
+				my: 8
 			}}
 		>
 			<Stack
@@ -48,11 +48,12 @@ const About = ({ data }: { data: string }) => {
 					}}
 				>
 					<Typography
-						variant='h3'
+						variant='h4'
 						sx={{
 							fontWeight: 'bold',
 							marginBottom: 4
 						}}
+						aria-label='About Me'
 					>
 						{title.map((el: string, i: number) => (
 							<motion.span

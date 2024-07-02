@@ -179,6 +179,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 							</motion.div>
 						</Stack>
 					</Box>
+
 					{/* image */}
 					<Box
 						className='-z-40'
@@ -214,7 +215,9 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 				animate='animate'
 				aria-hidden
 			>
-				{data?.name} <FaCode className='inline-block' /> {data?.designation}
+				<h3>
+					{data?.name} <FaCode className='inline-block' /> {data?.designation}
+				</h3>
 			</motion.div>
 		</Box>
 	);

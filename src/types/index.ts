@@ -29,6 +29,7 @@ export type TQueryParams = {
 };
 
 export type TProfile = {
+	_id: string;
 	name: string;
 	designation: string;
 	introduction: string;
@@ -51,6 +52,7 @@ export type TProfile = {
 };
 
 export type TProject = {
+	_id: string;
 	title: string;
 	description: string;
 	frontEndTech: string;
@@ -63,6 +65,7 @@ export type TProject = {
 };
 
 export type TBlog = {
+	_id: string;
 	title: string;
 	content: string;
 	image: string;
