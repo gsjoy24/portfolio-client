@@ -8,9 +8,9 @@ import './globals.css';
 export const metadata: Metadata = {
 	title: 'Gour Saha Joy - Full-Stack Web Developer',
 	description:
-		"Hello, and welcome to my portfolio website! I'm Gour Chandra Saha, a passionate full-stack developer dedicated to creating captivating and user-friendly web experiences. With a strong foundation in HTML, CSS, and JavaScript, I strive to bring creative ideas to life through clean and efficient code. Constantly expanding my skill set and keeping up with the latest industry trends, I deliver modern and responsive websites. I believe in the power of collaboration and enjoy working closely with clients and teams to turn visions into reality. My goal is to contribute to impactful projects that make a positive difference in people's lives. Take a look at my work, and let's embark on this exciting journey together!",
+		'I am Gour Saha Joy, a full-stack developer skilled in JavaScript, React, Next, Redux, Node, Mongodb, PostgreSQL, GraphQl and more. Explore my projects and join me on this journey of creating captivating and user-friendly web experiences. #goursahajoy @goursahajoy',
 	keywords:
-		'Full-Stack Web Developer, Gour Saha Joy, web developer portfolio, goursahajoy, frontend web developer in bd, backend web developer in bd, fullstack web developer in bd, Full-Stack Web Developer Portfolio, Gour Saha Joy Web Development Projects, freelance web developer, web development services, front end web developer, top web developers in bd, best web developers in bd',
+		'Gour Saha Joy, goursahajoy, Full-Stack Web Developer, frontend developer, backend developer, web developer in Bangladesh',
 	authors: [{ name: 'Gour Saha Joy' }],
 	twitter: {
 		card: 'summary_large_image',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 		type: 'website',
 		title: 'Gour Saha Joy - Full-Stack Web Developer',
 		description:
-			"Hello, and welcome to my portfolio website! I'm Gour Chandra Saha, a passionate full-stack developer dedicated to creating captivating and user-friendly web experiences. With a strong foundation in HTML, CSS, and JavaScript, I strive to bring creative ideas to life through clean and efficient code.",
+			'I am Gour Saha Joy, a full-stack developer skilled in JavaScript, React, Next, Redux, Node, Mongodb, PostgreSQL, GraphQl and more. Explore my projects and join me on this journey of creating captivating and user-friendly web experiences. #goursahajoy @goursahajoy',
 		images: 'https://i.ibb.co/qjWWsX1/goursahajoy.jpg'
 	}
 };

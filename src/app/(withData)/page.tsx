@@ -1,6 +1,7 @@
 'use client';
 import About from '@/components/Home/About';
 import HeroSection from '@/components/Home/HeroSection';
+import Projects from '@/components/Home/Projects/Projects';
 import Skills from '@/components/Home/Skills';
 import { useGetProfileQuery } from '@/redux/api/apis';
 import Loading from '../loading';
@@ -20,6 +21,7 @@ export default function Home() {
 					tools: data?.data?.tools
 				}}
 			/>
+			<Projects />
 		</>
 	);
 }
