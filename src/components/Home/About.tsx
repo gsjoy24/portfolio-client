@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const About = ({ data }: { data: string }) => {
-	const title = 'About Me'.split('');
+	const title = 'About Me'.split(' ');
 	const content = data.split(' ');
 	return (
 		<Container

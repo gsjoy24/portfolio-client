@@ -10,12 +10,12 @@ type TProp = {
 };
 
 const Skills = ({ data }: { data: TProp }) => {
-	const title = 'My Skills'.split('');
+	const title = 'My Skills'.split(' ');
 	return (
 		<Container
 			maxWidth='md'
 			sx={{
-				my: 4
+				mt: 4
 			}}
 		>
 			<Typography

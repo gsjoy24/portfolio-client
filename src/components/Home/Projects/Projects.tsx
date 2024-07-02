@@ -16,7 +16,7 @@ const Projects = () => {
 			id='projects'
 			maxWidth='md'
 			sx={{
-				my: 8
+				py: 12
 			}}
 		>
 			<Typography
@@ -27,7 +27,7 @@ const Projects = () => {
 				}}
 				aria-label='My Projects'
 			>
-				{'My Projects'.split('').map((el: string, i: number) => (
+				{'My Projects'.split(' ').map((el: string, i: number) => (
 					<motion.span
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
