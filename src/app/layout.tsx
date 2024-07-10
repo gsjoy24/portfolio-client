@@ -6,11 +6,10 @@ import { dm_sans } from './fonts';
 import './globals.css';
 
 export const metadata: Metadata = {
-	title: 'Gour Saha Joy - Full-Stack Web Developer',
+	title: 'Gour Saha Joy',
 	description:
-		'I am Gour Saha Joy, a full-stack developer skilled in JavaScript, React, Next, Redux, Node, Mongodb, PostgreSQL, GraphQl and more. Explore my projects and join me on this journey of creating captivating and user-friendly web experiences. #goursahajoy @goursahajoy',
-	keywords:
-		'Gour Saha Joy, goursahajoy, Full-Stack Web Developer, frontend developer, backend developer, web developer in Bangladesh',
+		'Gour Saha Joy is a full-stack web developer skilled in JavaScript, React, Next, Redux, Node, Mongodb, PostgreSQL, GraphQl and more. #goursahajoy @goursahajoy',
+	keywords: 'Gour Saha Joy, goursahajoy, Full-stack Web Developer',
 	authors: [{ name: 'Gour Saha Joy' }],
 	twitter: {
 		card: 'summary_large_image',
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
 		type: 'website',
 		title: 'Gour Saha Joy - Full-Stack Web Developer',
 		description:
-			'I am Gour Saha Joy, a full-stack developer skilled in JavaScript, React, Next, Redux, Node, Mongodb, PostgreSQL, GraphQl and more. Explore my projects and join me on this journey of creating captivating and user-friendly web experiences. #goursahajoy @goursahajoy',
+			'I am Gour Saha Joy, a full-stack developer skilled in JavaScript, React, Next, Redux, Node, Mongodb, PostgreSQL, GraphQl and more. #goursahajoy @goursahajoy',
 		images: 'https://i.ibb.co/qjWWsX1/goursahajoy.jpg'
 	}
 };
