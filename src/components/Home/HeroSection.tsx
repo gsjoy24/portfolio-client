@@ -209,7 +209,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 				</Stack>
 			</Container>
 			<motion.div
-				className='text-[200px] font-bold absolute bottom-0 whitespace-nowrap opacity-10  overflow-visible -z-30 w-[50%]'
+				className='text-[200px] font-bold absolute bottom-0 whitespace-nowrap opacity-10  overflow-visible -z-30 w-[50%] hidden md:block '
 				variants={sliderTextVariant}
 				initial='initial'
 				animate='animate'
