@@ -63,7 +63,7 @@ const About = ({ data }: { data: string }) => {
 									duration: 0.25,
 									delay: i / 10
 								}}
-								key={i}
+								key={`${el}-${i}`}
 							>
 								{el}{' '}
 							</motion.span>
@@ -78,7 +78,7 @@ const About = ({ data }: { data: string }) => {
 									duration: 0.15,
 									delay: i / 20
 								}}
-								key={i}
+								key={`${el}-${i}`}
 							>
 								{el}{' '}
 							</motion.span>

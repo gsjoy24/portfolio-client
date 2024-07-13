@@ -34,7 +34,7 @@ const Skills = ({ data }: { data: TProp }) => {
 							duration: 0.25,
 							delay: i / 10
 						}}
-						key={i}
+						key={`${el}-${i}`}
 					>
 						{el}{' '}
 					</motion.span>
@@ -57,7 +57,7 @@ const Skills = ({ data }: { data: TProp }) => {
 									duration: 0.25,
 									delay: i / 10
 								}}
-								key={i}
+								key={`${el}-${i}`}
 							>
 								{el}
 							</motion.span>
@@ -72,7 +72,7 @@ const Skills = ({ data }: { data: TProp }) => {
 									duration: 0.25,
 									delay: i / 10
 								}}
-								key={i}
+								key={`${el}-${i}`}
 							>
 								<Chip variant='outlined' label={el} sx={{ m: 1 }} />
 							</motion.span>
@@ -104,7 +104,7 @@ const Skills = ({ data }: { data: TProp }) => {
 									duration: 0.25,
 									delay: i / 10
 								}}
-								key={i}
+								key={`${el}-${i}`}
 							>
 								{el}
 							</motion.span>
@@ -119,7 +119,7 @@ const Skills = ({ data }: { data: TProp }) => {
 									duration: 0.25,
 									delay: i / 10
 								}}
-								key={i}
+								key={`${el}-${i}`}
 							>
 								<Chip variant='outlined' label={el} sx={{ m: 1 }} />
 							</motion.span>
@@ -151,7 +151,7 @@ const Skills = ({ data }: { data: TProp }) => {
 									duration: 0.25,
 									delay: i / 10
 								}}
-								key={i}
+								key={`${el}-${i}`}
 							>
 								{el}
 							</motion.span>
@@ -166,7 +166,7 @@ const Skills = ({ data }: { data: TProp }) => {
 									duration: 0.25,
 									delay: i / 10
 								}}
-								key={i}
+								key={`${el}-${i}`}
 							>
 								<Chip variant='outlined' label={el} sx={{ m: 1 }} />
 							</motion.span>

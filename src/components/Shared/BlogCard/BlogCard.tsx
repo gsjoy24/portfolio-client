@@ -1,9 +1,8 @@
 import { TBlog } from '@/types';
-import { Box, Button, Stack, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { IoMdOpen } from 'react-icons/io';
 
 const BlogCard = ({ blog, delay }: { blog: TBlog; delay: number }) => {
 	return (
@@ -53,7 +52,7 @@ const BlogCard = ({ blog, delay }: { blog: TBlog; delay: number }) => {
 							duration: 0.25,
 							delay: i / 10
 						}}
-						key={i}
+						key={`${el}-${i}`}
 					>
 						{el}{' '}
 					</motion.span>

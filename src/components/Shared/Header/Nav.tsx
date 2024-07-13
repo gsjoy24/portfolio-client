@@ -1,5 +1,5 @@
 import { navLinks } from '@/constant';
-import { Box, Container, Divider, Stack, Typography } from '@mui/material';
+import { Box, Container, Stack, Typography } from '@mui/material';
 import Link from 'next/link';
 
 const Nav = () => {

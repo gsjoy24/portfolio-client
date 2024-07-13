@@ -1,12 +1,10 @@
 'use client';
 import LoadingCompo from '@/components/Loading/LoadingCompo';
 import { useGetBlogQuery } from '@/redux/api/apis';
-import { Box, Button, Container, Stack, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import parse from 'html-react-parser';
 import Image from 'next/image';
-import { IoLogoGithub } from 'react-icons/io';
-import { MdOpenInNew } from 'react-icons/md';
 
 const FullBlog = ({ params }: { params: { id: string } }) => {
 	const { data, isLoading } = useGetBlogQuery(params?.id);
@@ -55,7 +53,7 @@ const FullBlog = ({ params }: { params: { id: string } }) => {
 										duration: 0.25,
 										delay: i / 10
 									}}
-									key={i}
+									key={`${el}-${i}`}
 								>
 									{el}{' '}
 								</motion.span>

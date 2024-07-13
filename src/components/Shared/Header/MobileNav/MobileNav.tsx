@@ -35,7 +35,7 @@ const MobileNav = () => {
 	};
 
 	const DrawerList = (
-		<Box sx={{ width: 350, zIndex: 999 }} role='presentation' px={2}>
+		<Box sx={{ width: 350, zIndex: 999 }} px={2}>
 			<Box
 				component={motion.div}
 				initial={{ x: -500, opacity: 0 }}
