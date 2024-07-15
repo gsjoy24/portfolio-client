@@ -1,3 +1,4 @@
+import GoogleAnalytics from '@/components/GoogleAnalytics/GoogleAnalytics';
 import Providers from '@/lib/Providers/Providers';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import type { Metadata } from 'next';
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { readonly children: React.Reac
 	return (
 		<Providers>
 			<html lang='en'>
+				<GoogleAnalytics />
 				<body className={dm_sans.className}>
 					<AppRouterCacheProvider>
 						{children}
