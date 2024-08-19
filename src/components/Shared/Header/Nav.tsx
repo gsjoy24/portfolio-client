@@ -27,7 +27,7 @@ const Nav = () => {
 								fontSize: '2rem'
 							}}
 						>
-							GSJoy
+							@goursahajoy
 						</Typography>
 					</Link>
 					{/* nav links */}

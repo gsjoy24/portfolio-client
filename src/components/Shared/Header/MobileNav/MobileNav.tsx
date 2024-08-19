@@ -74,7 +74,7 @@ const MobileNav = () => {
 							}
 						}}
 					>
-						GSJoy
+						@goursahajoy
 					</Typography>
 				</Link>
 				<IconButton
@@ -151,10 +151,10 @@ const MobileNav = () => {
 									fontWeight: '900',
 									color: 'secondary.main',
 									transition: 'color 0.2s',
-									fontSize: '2rem'
+									fontSize: '1.5rem'
 								}}
 							>
-								GSJoy
+								@goursahajoy
 							</Typography>
 						</Link>
 						<IconButton

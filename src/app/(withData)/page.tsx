@@ -1,5 +1,6 @@
 'use client';
 import About from '@/components/Home/About';
+import GitStats from '@/components/Home/GitStats';
 import HeroSection from '@/components/Home/HeroSection';
 import Projects from '@/components/Home/Projects/Projects';
 import Skills from '@/components/Home/Skills';
@@ -22,6 +23,7 @@ export default function Home() {
 				}}
 			/>
 			<Projects />
+			{/* <GitStats /> */}
 		</>
 	);
 }

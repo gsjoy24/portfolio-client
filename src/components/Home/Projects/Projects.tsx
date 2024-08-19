@@ -1,5 +1,6 @@
 'use client';
 import LoadingCompo from '@/components/Loading/LoadingCompo';
+import AnimatedText from '@/components/Shared/AnimatedText';
 import { useGetProjectsQuery } from '@/redux/api/apis';
 import { TProject } from '@/types';
 import { Container, Grid, Typography } from '@mui/material';
@@ -14,33 +15,11 @@ const Projects = () => {
 	) : (
 		<Container
 			id='projects'
-			maxWidth='md'
 			sx={{
 				py: 12
 			}}
 		>
-			<Typography
-				variant='h4'
-				sx={{
-					fontWeight: 'bold',
-					marginBottom: 4
-				}}
-				aria-label='My Projects'
-			>
-				{'My Projects'.split(' ').map((el: string, i: number) => (
-					<motion.span
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1 }}
-						transition={{
-							duration: 0.25,
-							delay: i / 10
-						}}
-						key={`${el}-${i}`}
-					>
-						{el}{' '}
-					</motion.span>
-				))}
-			</Typography>
+			<AnimatedText text='My Projects' variant='h4' sx={{ fontWeight: 'bold', marginBottom: 4 }} />
 			<Grid container>
 				{data?.data?.map((project: TProject, i: number) => (
 					<Grid

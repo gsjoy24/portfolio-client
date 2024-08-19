@@ -13,7 +13,7 @@ const Skills = ({ data }: { data: TProp }) => {
 	const title = 'My Skills'.split(' ');
 	return (
 		<Container
-			maxWidth='md'
+			// maxWidth='md'
 			sx={{
 				mt: 4
 			}}

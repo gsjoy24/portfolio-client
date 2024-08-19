@@ -1,3 +1,4 @@
+import AnimatedText from '@/components/Shared/AnimatedText';
 import { TProject } from '@/types';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
@@ -32,34 +33,22 @@ const SingleProject = ({ project, delay }: { project: TProject; delay: number })
 				my: 2,
 				bgcolor: 'background.paper',
 				borderRadius: 4,
-				boxShadow: 2
+				boxShadow: 2,
+				maxWidth: 500,
+				width: '100%'
 			}}
 		>
-			<Image src={project?.image} alt='project image' height={340} width={340} />
-			<Typography
-				variant='h5'
+			<Image src={project?.image} className='w-full ' alt='project image' height={340} width={340} />
+			<AnimatedText
+				text={project?.title}
+				variant='h1'
 				sx={{
 					fontWeight: 'bold',
 					my: 2,
 					fontSize: '1rem'
 				}}
-				arial-label={project?.title}
-			>
-				{project?.title.split(' ').map((el: string, i: number) => (
-					<motion.span
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1 }}
-						transition={{
-							duration: 0.25,
-							delay: i / 10
-						}}
-						key={`${el}-${i}`}
-					>
-						{el}{' '}
-					</motion.span>
-				))}
-			</Typography>
-			<Stack gap={2} direction='row'>
+			/>
+			<Stack gap={2} direction='row' justifyContent='end'>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}

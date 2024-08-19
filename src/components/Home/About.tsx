@@ -8,7 +8,7 @@ const About = ({ data }: { data: string }) => {
 	const content = data.split(' ');
 	return (
 		<Container
-			maxWidth='md'
+			maxWidth='lg'
 			sx={{
 				my: 8
 			}}
