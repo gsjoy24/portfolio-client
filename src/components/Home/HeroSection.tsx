@@ -167,7 +167,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 
 					{/* image */}
 					<Box
-						className='-z-40 max-w-[23rem] lg:max-w-[30rem] w-full min-h-[50vh] h-auto grid place-content-center'
+						className='-z-40 max-w-[23rem] lg:max-w-[30rem] w-full min-h-[50vh] h-auto'
 						component={motion.div}
 						initial={{
 							opacity: 0,
@@ -189,7 +189,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 							alt={`Picture of ${data?.name}`}
 							width={250}
 							height={300}
-							className='rounded-[40px] w-full'
+							className='rounded-[40px] w-full h-auto'
 						/>
 					</Box>
 				</Stack>
