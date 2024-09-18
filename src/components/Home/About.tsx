@@ -72,12 +72,13 @@ const About = ({ data }: { data: string }) => {
 					<Typography variant='body1' sx={{ textAlign: 'justify' }}>
 						{content.map((el: string, i: number) => (
 							<motion.span
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
+								initial={{ opacity: 0, scale: 0.4, color: 'red' }}
+								whileInView={{ opacity: 1, scale: 1, color: 'black' }}
 								transition={{
 									duration: 0.15,
-									delay: i / 20
+									delay: i / 40
 								}}
+								viewport={{ once: true }}
 								key={`${el}-${i}`}
 							>
 								{el}{' '}

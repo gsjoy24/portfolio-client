@@ -12,14 +12,14 @@ const SingleProject = ({ project, delay }: { project: TProject; delay: number })
 			component={motion.div}
 			initial={{
 				opacity: 0,
-				scale: 0
+				scale: 0.5
 			}}
 			whileInView={{
 				opacity: 1,
 				scale: 1
 			}}
 			transition={{
-				duration: 0.5,
+				duration: 0.3,
 				delay
 			}}
 			whileHover={{
@@ -28,6 +28,7 @@ const SingleProject = ({ project, delay }: { project: TProject; delay: number })
 					duration: 0.2
 				}
 			}}
+			viewport={{ once: true }}
 			sx={{
 				p: 3,
 				my: 2,

@@ -9,21 +9,6 @@ import { FaCode } from 'react-icons/fa6';
 import { GoDownload, GoEye } from 'react-icons/go';
 import { MdConnectWithoutContact } from 'react-icons/md';
 
-const sliderTextVariant = {
-	initial: {
-		x: 0
-	},
-	animate: {
-		x: '-500%',
-		transition: {
-			repeat: Infinity,
-			duration: 30,
-			ease: 'linear',
-			repeatType: 'mirror' as const
-		}
-	}
-};
-
 const HeroSection = ({ data }: { data: TProfile }) => {
 	const downloadLink = convertToDownloadLink(data?.resumeLink);
 	return (
@@ -37,7 +22,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 				<Stack
 					direction={{
 						xs: 'column-reverse',
-						md: 'row'
+						sm: 'row'
 					}}
 					gap={5}
 					py={2}
@@ -93,7 +78,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 									whileInView={{ opacity: 1 }}
 									transition={{
 										duration: 0.25,
-										delay: i / 10
+										delay: i / 5
 									}}
 									key={`${el}-${i}`}
 								>
@@ -159,7 +144,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 								}}
 								transition={{
 									duration: 0.25,
-									delay: 2
+									delay: 1.5
 								}}
 							>
 								<Button
@@ -182,20 +167,21 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 
 					{/* image */}
 					<Box
-						className='-z-40'
+						className='-z-40 max-w-[23rem] lg:max-w-[30rem] w-full h-auto grid place-content-center'
 						component={motion.div}
 						initial={{
 							opacity: 0,
-							scale: 0
+							scale: 0.5
 						}}
 						whileInView={{
 							opacity: 1,
 							scale: 1
 						}}
 						transition={{
-							duration: 0.3,
-							delay: 0.5
+							duration: 0.5,
+							delay: 0.3
 						}}
+						viewport={{ once: true }}
 					>
 						<Image
 							aria-label={`Picture of ${data?.name}`}
@@ -203,20 +189,34 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 							alt={`Picture of ${data?.name}`}
 							width={250}
 							height={300}
-							className='rounded-[40px] w-[250px] sm:w-auto'
+							className='rounded-[40px] w-[430px] sm:w-auto'
 						/>
 					</Box>
 				</Stack>
 			</Container>
 			<motion.div
-				className='text-[200px] font-bold absolute bottom-0 whitespace-nowrap opacity-10  overflow-visible -z-30 w-[50%]'
-				variants={sliderTextVariant}
-				initial='initial'
-				animate='animate'
+				className='text-[200px] font-bold absolute bottom-0 whitespace-nowrap opacity-10  overflow-visible -z-30 w-[80%]'
+				animate={{
+					translateX: '-450%'
+				}}
+				transition={{
+					duration: 25,
+					repeat: Infinity,
+					repeatType: 'loop',
+					ease: 'linear'
+				}}
 				aria-hidden
 			>
 				<h3>
-					{data?.name} <FaCode className='inline-block' /> {data?.designation}
+					<span className='mr-16 inline-block'>
+						{data?.name} <FaCode className='inline-block' /> {data?.designation}
+					</span>
+					<span className='mr-16 inline-block'>
+						{data?.name} <FaCode className='inline-block' /> {data?.designation}
+					</span>
+					<span>
+						{data?.name} <FaCode className='inline-block' /> {data?.designation}
+					</span>
 				</h3>
 			</motion.div>
 		</Box>
