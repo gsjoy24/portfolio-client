@@ -104,6 +104,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 									duration: 0.25,
 									delay: 1
 								}}
+								viewport={{ once: true }}
 							>
 								<Button
 									aria-label='Download the resume'
@@ -146,6 +147,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 									duration: 0.25,
 									delay: 1.5
 								}}
+								viewport={{ once: true }}
 							>
 								<Button
 									component={Link}
@@ -187,8 +189,8 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 							aria-label={`Picture of ${data?.name}`}
 							src={data?.profilePicture}
 							alt={`Picture of ${data?.name}`}
-							width={250}
-							height={300}
+							width={800}
+							height={800}
 							className='rounded-[40px] w-full h-auto'
 						/>
 					</Box>
