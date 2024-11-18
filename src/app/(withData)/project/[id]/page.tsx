@@ -1,16 +1,17 @@
-'use client';
-import LoadingCompo from '@/components/Loading/LoadingCompo';
-import { useGetProjectQuery } from '@/redux/api/apis';
-import { Box, Button, Container, Stack, Typography } from '@mui/material';
-import { motion } from 'framer-motion';
-import parse from 'html-react-parser';
-import Image from 'next/image';
-import { IoLogoGithub } from 'react-icons/io';
-import { MdOpenInNew } from 'react-icons/md';
+"use client";
+import LoadingCompo from "@/components/Loading/LoadingCompo";
+import AnimatedText from "@/components/Shared/AnimatedText";
+import { useGetProjectQuery } from "@/redux/api/apis";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import parse from "html-react-parser";
+import Image from "next/image";
+import { IoLogoGithub } from "react-icons/io";
+import { MdOpenInNew } from "react-icons/md";
 
 const ProjectDetails = ({ params }: { params: { id: string } }) => {
 	const { data, isLoading } = useGetProjectQuery(params?.id);
-	const description: string = data?.data?.description || '';
+	const description: string = data?.data?.description || "";
 	return isLoading ? (
 		<LoadingCompo />
 	) : (
@@ -31,29 +32,17 @@ const ProjectDetails = ({ params }: { params: { id: string } }) => {
 					<Typography
 						variant='h1'
 						sx={{
-							fontWeight: 'bold',
+							fontWeight: "bold",
 							my: 4,
 							fontSize: {
-								xs: '1.6rem',
-								md: '2.2rem'
+								xs: "1.6rem",
+								md: "2.2rem"
 							}
 						}}
 						aria-label={data?.data?.title}
 					>
 						<span>
-							{data?.data?.title.split(' ').map((el: string, i: number) => (
-								<motion.span
-									initial={{ opacity: 0 }}
-									whileInView={{ opacity: 1 }}
-									transition={{
-										duration: 0.25,
-										delay: i / 10
-									}}
-									key={`${el}-${i}`}
-								>
-									{el}{' '}
-								</motion.span>
-							))}
+							<AnimatedText text={data?.data?.title} />
 						</span>
 					</Typography>
 
@@ -74,7 +63,7 @@ const ProjectDetails = ({ params }: { params: { id: string } }) => {
 
 					<Typography
 						sx={{
-							fontWeight: 'bold',
+							fontWeight: "bold",
 							fontSize: {
 								sx: 18,
 								sm: 22
@@ -82,40 +71,16 @@ const ProjectDetails = ({ params }: { params: { id: string } }) => {
 							mb: 1
 						}}
 					>
-						{'Frontend Technologies:'.split(' ').map((el: string, i: number) => (
-							<motion.span
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								transition={{
-									duration: 0.25,
-									delay: i / 10
-								}}
-								key={`${el}-${i}`}
-							>
-								{el}{' '}
-							</motion.span>
-						))}
+						<AnimatedText text='Frontend Technologies:' />
 					</Typography>
 					<Typography>
-						{data?.data?.frontEndTech.split(' ').map((el: string, i: number) => (
-							<motion.span
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								transition={{
-									duration: 0.25,
-									delay: i / 10
-								}}
-								key={`${el}-${i}`}
-							>
-								{el}{' '}
-							</motion.span>
-						))}
+						<AnimatedText text={data?.data?.frontEndTech} />
 					</Typography>
 
 					{/* backend */}
 					<Typography
 						sx={{
-							fontWeight: 'bold',
+							fontWeight: "bold",
 							fontSize: {
 								sx: 18,
 								sm: 22
@@ -123,50 +88,14 @@ const ProjectDetails = ({ params }: { params: { id: string } }) => {
 							my: 1
 						}}
 					>
-						{'Backend Technologies:'.split(' ').map((el: string, i: number) => (
-							<motion.span
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								transition={{
-									duration: 0.25,
-									delay: i / 10
-								}}
-								key={`${el}-${i}`}
-							>
-								{el}{' '}
-							</motion.span>
-						))}
+						<AnimatedText text='Backend Technologies:' />
 					</Typography>
 					<Typography>
-						{data?.data?.backEndTech.split(' ').map((el: string, i: number) => (
-							<motion.span
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								transition={{
-									duration: 0.25,
-									delay: i / 10
-								}}
-								key={`${el}-${i}`}
-							>
-								{el}{' '}
-							</motion.span>
-						))}
+						<AnimatedText text={data?.data?.backEndTech} />
 					</Typography>
 
-					<Typography sx={{ fontWeight: 'bold', fontSize: 22, my: 1 }}>
-						{`It took ${data?.data?.duration} to complete this project.`.split(' ').map((el: string, i: number) => (
-							<motion.span
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								transition={{
-									duration: 0.25,
-									delay: i / 10
-								}}
-								key={`${el}-${i}`}
-							>
-								{el}{' '}
-							</motion.span>
-						))}
+					<Typography sx={{ fontWeight: "bold", fontSize: 22, my: 1 }}>
+						<AnimatedText text={`It took ${data?.data?.duration} to complete this project.`} />
 					</Typography>
 
 					<motion.div

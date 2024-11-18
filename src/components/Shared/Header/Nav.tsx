@@ -50,8 +50,9 @@ const Nav = () => {
 											right: 0,
 											transition: "width 0.2s",
 											width: "0px",
-											height: "2px",
-											backgroundColor: "#000"
+											height: "1px",
+											margin: "auto",
+											backgroundColor: "#fff"
 										},
 										"&:hover": {
 											"&::after": {
