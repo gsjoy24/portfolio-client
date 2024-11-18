@@ -1,30 +1,30 @@
-import { dm_sans } from '@/app/fonts';
-import { createTheme } from '@mui/material';
+import { dm_sans } from "@/app/fonts";
+import { createTheme } from "@mui/material";
 
 export const theme = createTheme({
 	palette: {
 		primary: {
-			main: '#023047'
+			main: "#222831"
 		},
 		secondary: {
-			main: '#132a13'
+			main: "#EEEEEE"
 		}
 	},
 	components: {
 		MuiButton: {
 			defaultProps: {
-				variant: 'outlined'
+				variant: "outlined"
 			},
 			styleOverrides: {
 				root: {
-					textTransform: 'none',
-					background: 'primary.main'
+					textTransform: "none",
+					background: "primary.main"
 				}
 			}
 		},
 		MuiTypography: {
 			defaultProps: {
-				color: 'secondary.main'
+				color: "secondary.main"
 			},
 			styleOverrides: {
 				root: {
@@ -34,7 +34,7 @@ export const theme = createTheme({
 		},
 		MuiContainer: {
 			defaultProps: {
-				maxWidth: 'lg'
+				maxWidth: "xl"
 			}
 		}
 	}

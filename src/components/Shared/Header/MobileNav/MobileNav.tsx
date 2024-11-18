@@ -1,16 +1,16 @@
-'use client';
-import { navLinks } from '@/constant';
-import { useGetProfileQuery } from '@/redux/api/apis';
-import { Container, IconButton, Stack, Typography } from '@mui/material';
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { useState } from 'react';
-import { CgMenuRightAlt } from 'react-icons/cg';
-import { IoClose } from 'react-icons/io5';
-import { MdOutlineArrowOutward } from 'react-icons/md';
-import SocialSection from '../../SocialSection';
+"use client";
+import { navLinks } from "@/constant";
+import { useGetProfileQuery } from "@/redux/api/apis";
+import { Container, IconButton, Stack, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { useState } from "react";
+import { CgMenuRightAlt } from "react-icons/cg";
+import { IoClose } from "react-icons/io5";
+import { MdOutlineArrowOutward } from "react-icons/md";
+import SocialSection from "../../SocialSection";
 
 const MobileNav = () => {
 	const [open, setOpen] = useState<boolean>(false);
@@ -44,15 +44,15 @@ const MobileNav = () => {
 					duration: 1
 				}}
 				sx={{
-					display: 'flex',
-					justifyContent: 'space-between',
-					alignItems: 'center',
+					display: "flex",
+					justifyContent: "space-between",
+					alignItems: "center",
 					p: 2,
-					borderBottom: '1px solid #455a6477',
+					borderBottom: "1px solid #455a6477",
 					mb: 3,
-					position: 'sticky',
+					position: "sticky",
 					top: 0,
-					bgcolor: 'background.paper',
+					bgcolor: "background.paper",
 					zIndex: 1
 				}}
 			>
@@ -65,12 +65,12 @@ const MobileNav = () => {
 						animate='animate'
 						aria-label='GSJoy Logo'
 						sx={{
-							fontWeight: '900',
-							color: 'secondary.main',
-							transition: 'color 0.2s',
-							fontSize: '2rem',
-							'&:hover': {
-								color: '#fff'
+							fontWeight: "900",
+							color: "secondary.main",
+							transition: "color 0.2s",
+							fontSize: "2rem",
+							"&:hover": {
+								color: "#fff"
 							}
 						}}
 					>
@@ -82,8 +82,8 @@ const MobileNav = () => {
 					onClick={toggleDrawer(false)}
 					aria-label='close drawer'
 					sx={{
-						bgcolor: 'background.paper',
-						color: 'secondary.main'
+						bgcolor: "#eee",
+						color: "secondary.main"
 					}}
 				>
 					<IoClose size={25} />
@@ -106,10 +106,10 @@ const MobileNav = () => {
 							justifyContent='space-between'
 							align-items='center'
 							sx={{
-								transition: 'all 0.3s',
+								transition: "all 0.3s",
 								fontSize: 24,
-								pb: '5px',
-								borderBottom: '1px solid #132a1346'
+								pb: "5px",
+								borderBottom: "1px solid #132a1346"
 							}}
 						>
 							<span>{link?.title}</span>
@@ -126,12 +126,12 @@ const MobileNav = () => {
 		<>
 			<Box
 				sx={{
-					position: 'sticky',
+					position: "sticky",
 					top: 0,
 					zIndex: 999,
-					backgroundColor: '#f8f7ff',
-					display: { xs: 'flex', sm: 'none' },
-					boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)'
+					backgroundColor: "#22283199",
+					backdropFilter: "blur(10px)",
+					display: { xs: "flex", sm: "none" }
 				}}
 			>
 				<Container>
@@ -140,7 +140,7 @@ const MobileNav = () => {
 						justifyContent='space-between'
 						alignItems='center'
 						gap={2}
-						sx={{ display: { xs: 'flex', sm: 'none' } }}
+						sx={{ display: { xs: "flex", sm: "none" } }}
 						py={1}
 					>
 						{/* text logo */}
@@ -148,10 +148,10 @@ const MobileNav = () => {
 							<Typography
 								aria-label='GSJoy Logo'
 								sx={{
-									fontWeight: '900',
-									color: 'secondary.main',
-									transition: 'color 0.2s',
-									fontSize: '1.5rem'
+									fontWeight: "900",
+									color: "secondary.main",
+									transition: "color 0.2s",
+									fontSize: "1.5rem"
 								}}
 							>
 								@goursahajoy
@@ -161,7 +161,7 @@ const MobileNav = () => {
 							onClick={toggleDrawer(true)}
 							aria-label='open drawer'
 							sx={{
-								color: 'secondary.main'
+								color: "secondary.main"
 							}}
 						>
 							<CgMenuRightAlt size={32} />

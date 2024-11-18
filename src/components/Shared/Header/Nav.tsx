@@ -1,17 +1,18 @@
-import { navLinks } from '@/constant';
-import { Box, Container, Stack, Typography } from '@mui/material';
-import Link from 'next/link';
+import { navLinks } from "@/constant";
+import { Box, Container, Stack, Typography } from "@mui/material";
+import Link from "next/link";
+import { v4 as uuidv4 } from "uuid";
 
 const Nav = () => {
 	return (
 		<Box
 			sx={{
-				position: 'sticky',
+				position: "sticky",
 				top: 0,
 				zIndex: 999,
-				backgroundColor: '#f8f7ff',
-				display: { xs: 'none', sm: 'flex' },
-				boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)'
+				backgroundColor: "#22283199",
+				display: { xs: "none", sm: "flex" },
+				backdropFilter: "blur(10px)"
 			}}
 		>
 			<Container>
@@ -21,10 +22,10 @@ const Nav = () => {
 						<Typography
 							aria-label='GSJoy Logo'
 							sx={{
-								fontWeight: '900',
-								color: 'secondary.main',
-								transition: 'color 0.2s',
-								fontSize: '2rem'
+								fontWeight: "900",
+								color: "secondary.main",
+								transition: "color 0.2s",
+								fontSize: "2rem"
 							}}
 						>
 							@goursahajoy
@@ -37,24 +38,24 @@ const Nav = () => {
 								<Typography
 									aria-label={link?.title}
 									sx={{
-										fontWeight: '500',
-										transition: 'color 0.2s',
-										color: 'secondary.main',
-										position: 'relative',
-										'&::after': {
+										fontWeight: "500",
+										transition: "color 0.2s",
+										color: "secondary.main",
+										position: "relative",
+										"&::after": {
 											content: '""',
-											position: 'absolute',
-											bottom: '-5px',
+											position: "absolute",
+											bottom: "-5px",
 											left: 0,
 											right: 0,
-											transition: 'width 0.2s',
-											width: '0px',
-											height: '2px',
-											backgroundColor: '#000'
+											transition: "width 0.2s",
+											width: "0px",
+											height: "2px",
+											backgroundColor: "#000"
 										},
-										'&:hover': {
-											'&::after': {
-												width: '100%'
+										"&:hover": {
+											"&::after": {
+												width: "100%"
 											}
 										}
 									}}
