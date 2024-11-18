@@ -28,7 +28,6 @@ const GInput = ({ label, type = "text", ariaLabel, name, placeholder, sx, multil
 					sx={{
 						...sx,
 						width: "100%",
-						// bgcolor: "secondary.main",
 						borderRadius: "5px",
 						"& .MuiOutlinedInput-notchedOutline": {
 							borderColor: "secondary.main"
@@ -36,7 +35,7 @@ const GInput = ({ label, type = "text", ariaLabel, name, placeholder, sx, multil
 						"& .mui-dzi2n9-MuiFormLabel-root-MuiInputLabel-root , .MuiFormLabel-root": {
 							color: "white"
 						},
-						"& .MuiInputBase-input ": {
+						"& .MuiInputBase-input": {
 							color: "white"
 						}
 					}}

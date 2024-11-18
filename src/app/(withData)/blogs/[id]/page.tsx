@@ -1,21 +1,22 @@
-'use client';
-import LoadingCompo from '@/components/Loading/LoadingCompo';
-import { useGetBlogQuery } from '@/redux/api/apis';
-import { Box, Container, Typography } from '@mui/material';
-import { motion } from 'framer-motion';
-import parse from 'html-react-parser';
-import Image from 'next/image';
+"use client";
+import LoadingCompo from "@/components/Loading/LoadingCompo";
+import AnimatedText from "@/components/Shared/AnimatedText";
+import { useGetBlogQuery } from "@/redux/api/apis";
+import { Box, Container, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import parse from "html-react-parser";
+import Image from "next/image";
 
 const FullBlog = ({ params }: { params: { id: string } }) => {
 	const { data, isLoading } = useGetBlogQuery(params?.id);
-	const content: string = data?.data?.content || '';
+	const content: string = data?.data?.content || "";
 	return isLoading ? (
 		<LoadingCompo />
 	) : (
 		<Container>
 			<Box
 				sx={{
-					my: 8
+					my: 6
 				}}
 			>
 				<motion.div
@@ -28,36 +29,24 @@ const FullBlog = ({ params }: { params: { id: string } }) => {
 						alt='blog image'
 						height={900}
 						width={1200}
-						className='w-full max-w-[700px] mx-auto'
+						className='w-full max-w-[900px] mx-auto'
 					/>
 				</motion.div>
 				<Box>
 					<Typography
 						variant='h1'
 						sx={{
-							fontWeight: 'bold',
+							fontWeight: "bold",
 							my: 4,
 							fontSize: {
-								xs: '1.6rem',
-								md: '2.2rem'
+								xs: "1.6rem",
+								md: "2.2rem"
 							}
 						}}
 						aria-label={data?.data?.title}
 					>
 						<span>
-							{data?.data?.title.split(' ').map((el: string, i: number) => (
-								<motion.span
-									initial={{ opacity: 0 }}
-									whileInView={{ opacity: 1 }}
-									transition={{
-										duration: 0.25,
-										delay: i / 10
-									}}
-									key={`${el}-${i}`}
-								>
-									{el}{' '}
-								</motion.span>
-							))}
+							<AnimatedText text={data?.data?.title} />
 						</span>
 					</Typography>
 

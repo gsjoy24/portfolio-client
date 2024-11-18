@@ -1,8 +1,10 @@
-import { TBlog } from '@/types';
-import { Box, Button, Typography } from '@mui/material';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
+import { TBlog } from "@/types";
+import { ClassNames } from "@emotion/react";
+import { Box, Button, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import AnimatedText from "../AnimatedText";
 
 const BlogCard = ({ blog, delay }: { blog: TBlog; delay: number }) => {
 	return (
@@ -29,34 +31,22 @@ const BlogCard = ({ blog, delay }: { blog: TBlog; delay: number }) => {
 			sx={{
 				p: 3,
 				my: 2,
-				bgcolor: 'background.paper',
+				bgcolor: "#181e26",
 				borderRadius: 4,
 				boxShadow: 2
 			}}
 		>
-			<Image src={blog?.image} alt='blog image' height={340} width={340} />
+			<Image src={blog?.image} alt='blog image' height={340} width={340} className='w-full' />
 			<Typography
 				variant='h5'
 				sx={{
-					fontWeight: 'bold',
+					fontWeight: "bold",
 					my: 2,
-					fontSize: '1rem'
+					fontSize: "1rem"
 				}}
 				arial-label={blog?.title}
 			>
-				{blog?.title.split(' ').map((el: string, i: number) => (
-					<motion.span
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1 }}
-						transition={{
-							duration: 0.25,
-							delay: i / 10
-						}}
-						key={`${el}-${i}`}
-					>
-						{el}{' '}
-					</motion.span>
-				))}
+				<AnimatedText text={blog?.title} />
 			</Typography>
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}
