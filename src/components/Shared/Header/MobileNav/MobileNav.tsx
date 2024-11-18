@@ -28,8 +28,8 @@ const MobileNav = () => {
 			x: 0,
 			opacity: 1,
 			transition: {
-				duration: 1
-				// staggerChildren: 0.1
+				duration: 1,
+				staggerChildren: 0.1
 			}
 		}
 	};
@@ -103,7 +103,7 @@ const MobileNav = () => {
 							animate={{ x: 0, opacity: 1 }}
 							transition={{
 								duration: 0.4,
-								delay: index * 0.1
+								delay: index * 0.3
 							}}
 							direction='row'
 							justifyContent='space-between'

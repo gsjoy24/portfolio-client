@@ -56,7 +56,7 @@ const About = ({ data }: { data: string }) => {
 					>
 						<AnimatedText text='About Me' />
 					</Typography>
-					<Typography variant='body1' sx={{ textAlign: "justify" }}>
+					<Typography variant='body2' sx={{ textAlign: "justify" }}>
 						<AnimatedText text={data} delay={0.02} />
 					</Typography>
 				</Box>

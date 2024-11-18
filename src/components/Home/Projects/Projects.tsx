@@ -23,12 +23,12 @@ const Projects = () => {
 				sx={{
 					fontWeight: "bold",
 					marginTop: 2,
-					marginBottom: 6,
+					marginBottom: 4,
 					textAlign: "center"
 				}}
 				aria-label='My Projects'
 			>
-				<AnimatedText text='My Projects' variant='h4' sx={{ fontWeight: "bold", marginBottom: 4 }} />
+				<AnimatedText text='My Projects' />
 			</Typography>
 			<Grid container>
 				{data?.data?.map((project: TProject, i: number) => (

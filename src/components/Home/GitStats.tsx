@@ -35,7 +35,7 @@ const GitStats = () => {
 				<Grid item xs={12} md={6}>
 					<img
 						className='w-full'
-						src='https://github-readme-stats.vercel.app/api/wakatime?username=goursahajoy&custom_title=Coding%20Time&layout=compact&theme=github_dark'
+						src='https://github-readme-stats.vercel.app/api/wakatime?username=goursahajoy&custom_title=Last%207%20Days%20Coding%20Time&layout=compact&theme=github_dark'
 						alt='Git Stats'
 						width='500'
 						height='300'
@@ -64,9 +64,6 @@ const GitStats = () => {
 						my: 4
 					}}
 				>
-					<Typography variant='h4' sx={{ fontWeight: "bold", marginY: 4 }}>
-						<AnimatedText text='My GitHub Summary' />
-					</Typography>
 					<img
 						src='https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=gsjoy24&theme=radical'
 						alt='Git Stats'
@@ -83,12 +80,9 @@ const GitStats = () => {
 						justifyContent: "center",
 						alignItems: "center",
 						flexDirection: "column",
-						my: 4
+						mb: 4
 					}}
 				>
-					<Typography variant='h4' sx={{ fontWeight: "bold", marginBottom: 4 }}>
-						<AnimatedText text='My GitHub Calendar' />
-					</Typography>
 					<GitHubCalendar username='gsjoy24' style={{ width: "100%" }} />
 				</Grid>
 			</Grid>

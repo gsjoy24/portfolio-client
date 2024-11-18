@@ -25,7 +25,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 						xs: "column-reverse",
 						sm: "row"
 					}}
-					gap={5}
+					gap={4}
 					py={2}
 					justifyContent='space-between'
 					alignItems='center'
@@ -42,7 +42,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 							}}
 							aria-label={`Hi there, I am ${data?.name}`}
 						>
-							<span className='text-[1.3rem] lg:text-[2rem] mb-4'>
+							<span className='text-[1.3rem] lg:text-[2rem] mb-2'>
 								<AnimatedText text='Hi there, I am' />
 							</span>
 							<span>
@@ -52,7 +52,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 
 						<Typography
 							variant='h2'
-							sx={{ fontWeight: "bold", fontSize: "1.5rem", my: 3 }}
+							sx={{ fontWeight: "bold", fontSize: "1.5rem", my: 2 }}
 							aria-label={data?.designation}
 						>
 							<AnimatedText text={data.designation} delay={0.2} />
