@@ -11,6 +11,7 @@ type TAnimatedText = {
 
 const AnimatedText = ({ text, duration, delay, animationDelay }: TAnimatedText) => {
 	const key = uuidv4();
+	const randomKey = Math.random().toFixed(2);
 
 	return text.split(" ").map((el: string, i: number) => (
 		<motion.span
@@ -21,7 +22,7 @@ const AnimatedText = ({ text, duration, delay, animationDelay }: TAnimatedText) 
 				delay: animationDelay ?? i * (delay ?? 0.2)
 			}}
 			viewport={{ once: true }}
-			key={key + el}
+			key={key + el + randomKey}
 		>
 			{el}{" "}
 		</motion.span>

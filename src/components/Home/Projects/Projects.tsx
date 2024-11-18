@@ -22,7 +22,9 @@ const Projects = () => {
 				variant='h4'
 				sx={{
 					fontWeight: "bold",
-					marginBottom: 4
+					marginTop: 2,
+					marginBottom: 6,
+					textAlign: "center"
 				}}
 				aria-label='My Projects'
 			>

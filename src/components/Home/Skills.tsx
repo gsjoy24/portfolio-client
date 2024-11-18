@@ -21,7 +21,9 @@ const Skills = ({ data }: { data: TProp }) => {
 				variant='h4'
 				sx={{
 					fontWeight: "bold",
-					marginBottom: 4
+					marginTop: 12,
+					marginBottom: 6,
+					textAlign: "center"
 				}}
 				aria-label='List of technologies I am familiar with'
 			>
@@ -62,6 +64,10 @@ const Skills = ({ data }: { data: TProp }) => {
 						mt: {
 							xs: 3,
 							md: 0
+						},
+						px: {
+							xs: 0,
+							md: 0.5
 						}
 					}}
 				>
