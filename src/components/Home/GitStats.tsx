@@ -45,7 +45,7 @@ const GitStats = () => {
 				<Grid item xs={12} md={6}>
 					<img
 						className='w-full'
-						src='https://github-readme-stats.vercel.app/api/top-langs?username=gsjoy24&custom_title=Top%20Langs%20I%20Used&layout=compact&theme=github_dark'
+						src='https://github-readme-stats.vercel.app/api/top-langs?username=gsjoy24&custom_title=Top%20Languages%20I%20Used&layout=compact&theme=github_dark'
 						alt='Git Stats'
 						width='500'
 						height='300'
