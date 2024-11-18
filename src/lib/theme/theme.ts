@@ -23,6 +23,17 @@ export const theme = createTheme({
 				}
 			}
 		},
+		MuiTextField: {
+			defaultProps: {
+				variant: "outlined",
+				color: "secondary"
+			},
+			styleOverrides: {
+				root: {
+					fontFamily: dm_sans.style.fontFamily
+				}
+			}
+		},
 		MuiTypography: {
 			defaultProps: {
 				color: "secondary.main"

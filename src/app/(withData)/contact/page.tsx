@@ -1,21 +1,22 @@
-'use client';
-import Loading from '@/app/loading';
-import GForm from '@/components/Form/GForm';
-import GInput from '@/components/Form/GInput';
-import SocialSection from '@/components/Shared/SocialSection';
-import config from '@/lib/config';
-import { useGetProfileQuery } from '@/redux/api/apis';
-import sendEmailSchema from '@/validationSchema/SendEmail.validation';
-import emailjs from '@emailjs/browser';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Box, Button, Container, Grid, Stack, Typography } from '@mui/material';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { FieldValues } from 'react-hook-form';
-import toast from 'react-hot-toast';
-import { HiOutlineMail } from 'react-icons/hi';
-import { SlPhone } from 'react-icons/sl';
+"use client";
+import Loading from "@/app/loading";
+import GForm from "@/components/Form/GForm";
+import GInput from "@/components/Form/GInput";
+import AnimatedText from "@/components/Shared/AnimatedText";
+import SocialSection from "@/components/Shared/SocialSection";
+import config from "@/lib/config";
+import { useGetProfileQuery } from "@/redux/api/apis";
+import sendEmailSchema from "@/validationSchema/SendEmail.validation";
+import emailjs from "@emailjs/browser";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { FieldValues } from "react-hook-form";
+import toast from "react-hot-toast";
+import { HiOutlineMail } from "react-icons/hi";
+import { SlPhone } from "react-icons/sl";
 
 const ContactPage = () => {
 	const router = useRouter();
@@ -27,11 +28,11 @@ const ContactPage = () => {
 		emailjs.send(config.email_service_id, config.email_template_id, data, config.email_public_id).then(
 			(result) => {
 				if (result.status === 200) {
-					toast.success('Message sent successfully!');
+					toast.success("Message sent successfully!");
 					// redirect to home page
-					router.push('/');
+					router.push("/");
 				} else {
-					toast.error('Failed to send! please try again later!');
+					toast.error("Failed to send! please try again later!");
 				}
 			},
 			(error) => {}
@@ -43,10 +44,10 @@ const ContactPage = () => {
 	) : (
 		<Container
 			sx={{
-				minHeight: '90vh',
-				display: 'flex',
-				justifyContent: 'center',
-				alignItems: 'center',
+				minHeight: "90vh",
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center",
 				py: 4
 			}}
 		>
@@ -54,73 +55,28 @@ const ContactPage = () => {
 				<Grid item xs={12} md={5} p={2}>
 					<Box
 						sx={{
-							fontSize: '1.2rem'
+							fontSize: "1.2rem"
 						}}
 					>
-						<Typography variant='h4' sx={{ fontWeight: 'bold', mb: 2 }}>
-							{'Get In Touch'.split(' ').map((el: string, i: number) => (
-								<motion.span
-									initial={{ opacity: 0 }}
-									whileInView={{ opacity: 1 }}
-									transition={{
-										duration: 0.25,
-										delay: i / 10
-									}}
-									key={`${el}-${i}`}
-								>
-									{el}{' '}
-								</motion.span>
-							))}
+						<Typography variant='h4' sx={{ fontWeight: "bold", mb: 2 }}>
+							<AnimatedText text='Get in Touch' />
 						</Typography>
 						<Typography sx={{ fontSize: 14, mb: 2 }}>
-							{text.split(' ').map((el: string, i: number) => (
-								<motion.span
-									initial={{ opacity: 0 }}
-									whileInView={{ opacity: 1 }}
-									transition={{
-										duration: 0.25,
-										delay: i / 10
-									}}
-									key={`${el}-${i}`}
-								>
-									{el}{' '}
-								</motion.span>
-							))}
+							<AnimatedText text={text} delay={0.02} />
 						</Typography>
 						<Stack direction='row' alignItems='center' gap={1} mb={1}>
 							<HiOutlineMail size={20} />
-							<Link href={`mailto:${data?.data?.contact?.email}`}>
-								{data?.data?.contact?.email.split('').map((el: string, i: number) => (
-									<motion.span
-										initial={{ opacity: 0 }}
-										whileInView={{ opacity: 1 }}
-										transition={{
-											duration: 0.25,
-											delay: i / 10
-										}}
-										key={`${el}-${i}`}
-									>
-										{el}
-									</motion.span>
-								))}
+							<Link
+								href={`mailto:${data?.data?.contact?.email}`}
+								aria-label={`Send email to ${data?.data?.contact?.email}`}
+							>
+								<AnimatedText text={data?.data?.contact?.email} animationDelay={1} />
 							</Link>
 						</Stack>
 						<Stack direction='row' alignItems='center' gap={1}>
 							<SlPhone size={20} />
 							<p>
-								{data?.data?.contact?.phone.split('').map((el: string, i: number) => (
-									<motion.span
-										initial={{ opacity: 0 }}
-										whileInView={{ opacity: 1 }}
-										transition={{
-											duration: 0.25,
-											delay: i / 10
-										}}
-										key={`${el}-${i}`}
-									>
-										{el}
-									</motion.span>
-								))}
+								<AnimatedText text={data?.data?.contact?.phone} animationDelay={1.3} />
 							</p>
 						</Stack>
 					</Box>
@@ -131,22 +87,10 @@ const ContactPage = () => {
 				<Grid item xs={12} md={7} p={2}>
 					<Typography
 						variant='h4'
-						sx={{ fontWeight: 'bold', mb: 2, textAlign: 'center' }}
+						sx={{ fontWeight: "bold", mb: 2, textAlign: "center" }}
 						aria-label='Send Message Form'
 					>
-						{'Send Message'.split(' ').map((el: string, i: number) => (
-							<motion.span
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								transition={{
-									duration: 0.25,
-									delay: i / 10
-								}}
-								key={`${el}-${i}`}
-							>
-								{el}{' '}
-							</motion.span>
-						))}
+						<AnimatedText text='Send Message' />
 					</Typography>
 					<GForm onSubmit={onSubmit} resolver={zodResolver(sendEmailSchema)}>
 						<Stack gap={2}>
