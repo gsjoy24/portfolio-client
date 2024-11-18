@@ -28,14 +28,14 @@ const MobileNav = () => {
 			x: 0,
 			opacity: 1,
 			transition: {
-				duration: 1,
-				staggerChildren: 0.2
+				duration: 1
+				// staggerChildren: 0.1
 			}
 		}
 	};
 
 	const DrawerList = (
-		<Box sx={{ width: 350, zIndex: 999 }} px={2}>
+		<Box sx={{ width: 350, zIndex: 999, bgcolor: "#222831", height: "100%" }} px={2}>
 			<Box
 				component={motion.div}
 				initial={{ x: -500, opacity: 0 }}
@@ -52,7 +52,7 @@ const MobileNav = () => {
 					mb: 3,
 					position: "sticky",
 					top: 0,
-					bgcolor: "background.paper",
+					bgcolor: "#222831",
 					zIndex: 1
 				}}
 			>
@@ -83,7 +83,10 @@ const MobileNav = () => {
 					aria-label='close drawer'
 					sx={{
 						bgcolor: "#eee",
-						color: "secondary.main"
+						color: "primary.main",
+						"&:hover": {
+							bgcolor: "#fff"
+						}
 					}}
 				>
 					<IoClose size={25} />
@@ -99,8 +102,8 @@ const MobileNav = () => {
 							initial={{ x: -500, opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}
 							transition={{
-								duration: 1,
-								delay: index * 0.2
+								duration: 0.4,
+								delay: index * 0.1
 							}}
 							direction='row'
 							justifyContent='space-between'
@@ -109,7 +112,8 @@ const MobileNav = () => {
 								transition: "all 0.3s",
 								fontSize: 24,
 								pb: "5px",
-								borderBottom: "1px solid #132a1346"
+								borderBottom: "1px solid #132a1346",
+								color: "secondary.main"
 							}}
 						>
 							<span>{link?.title}</span>
@@ -118,7 +122,7 @@ const MobileNav = () => {
 					</Link>
 				))}
 			</Stack>
-			{!isLoading && <SocialSection socialLinks={data?.data?.socialLinks} />}
+			<div className='absolute bottom-5'>{!isLoading && <SocialSection socialLinks={data?.data?.socialLinks} />}</div>
 		</Box>
 	);
 
