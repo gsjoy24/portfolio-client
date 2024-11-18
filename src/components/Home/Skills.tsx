@@ -1,8 +1,9 @@
-import { Box, Chip, Container, Grid, Typography } from '@mui/material';
-import { motion } from 'framer-motion';
-import { ImDisplay } from 'react-icons/im';
-import { IoServerOutline } from 'react-icons/io5';
-import { MdOutlineCodeOff } from 'react-icons/md';
+import { Box, Chip, Container, Grid, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import { ImDisplay } from "react-icons/im";
+import { IoServerOutline } from "react-icons/io5";
+import { MdOutlineCodeOff } from "react-icons/md";
+import AnimatedText from "../Shared/AnimatedText";
 type TProp = {
 	frontEndSkills: string;
 	backEndSkills: string;
@@ -10,10 +11,8 @@ type TProp = {
 };
 
 const Skills = ({ data }: { data: TProp }) => {
-	const title = 'My Skills'.split(' ');
 	return (
 		<Container
-			// maxWidth='md'
 			sx={{
 				mt: 4
 			}}
@@ -21,50 +20,26 @@ const Skills = ({ data }: { data: TProp }) => {
 			<Typography
 				variant='h4'
 				sx={{
-					fontWeight: 'bold',
+					fontWeight: "bold",
 					marginBottom: 4
 				}}
 				aria-label='List of technologies I am familiar with'
 			>
-				{title.map((el: string, i: number) => (
-					<motion.span
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1 }}
-						transition={{
-							duration: 0.25,
-							delay: i / 10
-						}}
-						key={`${el}-${i}`}
-					>
-						{el}{' '}
-					</motion.span>
-				))}
+				<AnimatedText text={"My Skills"} />
 			</Typography>
 
 			<Grid container justifyContent='center'>
 				<Grid item xs={12} md={5}>
 					<Typography
 						variant='h5'
-						sx={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}
+						sx={{ fontWeight: "bold", display: "flex", alignItems: "center", gap: 1.5, mb: 1 }}
 						aria-label='Frontend Technologies'
 					>
 						<ImDisplay size={16} />
-						{'Frontend'.split(' ').map((el: string, i: number) => (
-							<motion.span
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								transition={{
-									duration: 0.25,
-									delay: i / 10
-								}}
-								key={`${el}-${i}`}
-							>
-								{el}
-							</motion.span>
-						))}
+						<AnimatedText text='Frontend' />
 					</Typography>
 					<Box>
-						{data?.frontEndSkills.split(',').map((el: string, i: number) => (
+						{data?.frontEndSkills.split(",").map((el: string, i: number) => (
 							<motion.span
 								initial={{ opacity: 0 }}
 								whileInView={{ opacity: 1 }}
@@ -74,7 +49,7 @@ const Skills = ({ data }: { data: TProp }) => {
 								}}
 								key={`${el}-${i}`}
 							>
-								<Chip variant='outlined' label={el} sx={{ m: 1 }} />
+								<Chip variant='outlined' label={el} sx={{ m: 1 }} color='secondary' />
 							</motion.span>
 						))}
 					</Box>
@@ -92,26 +67,14 @@ const Skills = ({ data }: { data: TProp }) => {
 				>
 					<Typography
 						variant='h5'
-						sx={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}
+						sx={{ fontWeight: "bold", display: "flex", alignItems: "center", gap: 1.5, mb: 1 }}
 						aria-label='Backend Technologies'
 					>
 						<IoServerOutline size={16} />
-						{'Backend'.split(' ').map((el: string, i: number) => (
-							<motion.span
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								transition={{
-									duration: 0.25,
-									delay: i / 10
-								}}
-								key={`${el}-${i}`}
-							>
-								{el}
-							</motion.span>
-						))}
+						<AnimatedText text='Backend' />
 					</Typography>
 					<Box>
-						{data?.backEndSkills.split(',').map((el: string, i: number) => (
+						{data?.backEndSkills.split(",").map((el: string, i: number) => (
 							<motion.span
 								initial={{ opacity: 0 }}
 								whileInView={{ opacity: 1 }}
@@ -121,7 +84,7 @@ const Skills = ({ data }: { data: TProp }) => {
 								}}
 								key={`${el}-${i}`}
 							>
-								<Chip variant='outlined' label={el} sx={{ m: 1 }} />
+								<Chip variant='outlined' label={el} sx={{ m: 1 }} color='secondary' />
 							</motion.span>
 						))}
 					</Box>
@@ -139,26 +102,14 @@ const Skills = ({ data }: { data: TProp }) => {
 				>
 					<Typography
 						variant='h5'
-						sx={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}
+						sx={{ fontWeight: "bold", display: "flex", alignItems: "center", gap: 1.5, mb: 1 }}
 						aria-label='Tools I use for development'
 					>
 						<MdOutlineCodeOff size={16} />
-						{'Tools'.split(' ').map((el: string, i: number) => (
-							<motion.span
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								transition={{
-									duration: 0.25,
-									delay: i / 10
-								}}
-								key={`${el}-${i}`}
-							>
-								{el}
-							</motion.span>
-						))}
+						<AnimatedText text='Tools' />
 					</Typography>
 					<Box>
-						{data?.tools.split(',').map((el: string, i: number) => (
+						{data?.tools.split(",").map((el: string, i: number) => (
 							<motion.span
 								initial={{ opacity: 0 }}
 								whileInView={{ opacity: 1 }}
@@ -168,7 +119,7 @@ const Skills = ({ data }: { data: TProp }) => {
 								}}
 								key={`${el}-${i}`}
 							>
-								<Chip variant='outlined' label={el} sx={{ m: 1 }} />
+								<Chip label={el} sx={{ m: 1 }} color='secondary' variant='outlined' />
 							</motion.span>
 						))}
 					</Box>
