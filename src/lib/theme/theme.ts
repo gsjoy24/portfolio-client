@@ -13,7 +13,8 @@ export const theme = createTheme({
 	components: {
 		MuiButton: {
 			defaultProps: {
-				variant: "outlined"
+				variant: "outlined",
+				color: "secondary"
 			},
 			styleOverrides: {
 				root: {

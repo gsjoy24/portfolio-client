@@ -1,28 +1,29 @@
-'use client';
-import { TProfile } from '@/types';
-import convertToDownloadLink from '@/utils/convertToDownloadLink';
-import { Box, Button, ButtonGroup, Container, Stack, Typography } from '@mui/material';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import { FaCode } from 'react-icons/fa6';
-import { GoDownload, GoEye } from 'react-icons/go';
-import { MdConnectWithoutContact } from 'react-icons/md';
+"use client";
+import { TProfile } from "@/types";
+import convertToDownloadLink from "@/utils/convertToDownloadLink";
+import { Box, Button, ButtonGroup, Container, Stack, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { FaCode } from "react-icons/fa6";
+import { GoDownload, GoEye } from "react-icons/go";
+import { MdConnectWithoutContact } from "react-icons/md";
+import AnimatedText from "../Shared/AnimatedText";
 
 const HeroSection = ({ data }: { data: TProfile }) => {
 	const downloadLink = convertToDownloadLink(data?.resumeLink);
 	return (
 		<Box
 			sx={{
-				position: 'relative',
-				overflow: 'hidden'
+				position: "relative",
+				overflow: "hidden"
 			}}
 		>
 			<Container>
 				<Stack
 					direction={{
-						xs: 'column-reverse',
-						sm: 'row'
+						xs: "column-reverse",
+						sm: "row"
 					}}
 					gap={5}
 					py={2}
@@ -33,58 +34,28 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 						<Typography
 							variant='h1'
 							sx={{
-								fontWeight: 'bold',
-								fontSize: { xs: '2.5rem', md: '4.5rem' },
-								display: 'flex',
-								flexDirection: 'column',
-								gap: '0.5rem'
+								fontWeight: "bold",
+								fontSize: { xs: "2.5rem", md: "4.5rem" },
+								display: "flex",
+								flexDirection: "column",
+								gap: "0.5rem"
 							}}
+							aria-label={`Hi there, I am ${data?.name}`}
 						>
-							<span className='text-[30px]'>
-								{'Hi there, I am'.split(' ').map((el: string, i: number) => (
-									<motion.span
-										initial={{ opacity: 0 }}
-										whileInView={{ opacity: 1 }}
-										transition={{
-											duration: 0.25,
-											delay: i / 10
-										}}
-										key={`${el}-${i}`}
-									>
-										{el}{' '}
-									</motion.span>
-								))}
+							<span className='text-[1.3rem] lg:text-[2rem] mb-4'>
+								<AnimatedText text='Hi there, I am' />
 							</span>
 							<span>
-								{data?.name.split(' ').map((el: string, i: number) => (
-									<motion.span
-										initial={{ opacity: 0 }}
-										whileInView={{ opacity: 1 }}
-										transition={{
-											duration: 0.25,
-											delay: i / 10
-										}}
-										key={`${el}-${i}`}
-									>
-										{el}{' '}
-									</motion.span>
-								))}
+								<AnimatedText text={data.name} />
 							</span>
 						</Typography>
-						<Typography variant='h2' sx={{ fontWeight: 'bold', fontSize: '1.5rem', mb: 3 }}>
-							{data.designation.split(' ').map((el: string, i: number) => (
-								<motion.span
-									initial={{ opacity: 0 }}
-									whileInView={{ opacity: 1 }}
-									transition={{
-										duration: 0.25,
-										delay: i / 5
-									}}
-									key={`${el}-${i}`}
-								>
-									{el}{' '}
-								</motion.span>
-							))}
+
+						<Typography
+							variant='h2'
+							sx={{ fontWeight: "bold", fontSize: "1.5rem", my: 3 }}
+							aria-label={data?.designation}
+						>
+							<AnimatedText text={data.designation} delay={0.2} />
 						</Typography>
 
 						{/* resume download and see button */}
@@ -92,6 +63,7 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 							<ButtonGroup
 								aria-label='Download or see resume'
 								component={motion.div}
+								sx={{ borderColor: "secondary.main", color: "secondary.main" }}
 								initial={{
 									opacity: 0,
 									scale: 0
@@ -112,9 +84,12 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 									href={downloadLink}
 									download
 									sx={{
-										'&:hover': {
-											backgroundColor: 'primary.main',
-											color: 'white'
+										borderColor: "#F5F7F877",
+										color: "secondary.main",
+										"&:hover": {
+											backgroundColor: "primary.main",
+											color: "white",
+											borderColor: "white"
 										}
 									}}
 								>
@@ -125,15 +100,20 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 									target='_blank'
 									aria-label='See the resume'
 									sx={{
-										'&:hover': {
-											backgroundColor: 'primary.main',
-											color: 'white'
+										borderColor: "#F5F7F877",
+										color: "secondary.main",
+										"&:hover": {
+											backgroundColor: "primary.main",
+											color: "white",
+											borderColor: "white"
 										}
 									}}
 								>
 									<GoEye size={20} />
 								</Button>
 							</ButtonGroup>
+
+							{/* Contact Me button */}
 							<motion.div
 								initial={{
 									opacity: 0,
@@ -155,9 +135,9 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 									variant='outlined'
 									startIcon={<MdConnectWithoutContact />}
 									sx={{
-										'&:hover': {
-											backgroundColor: 'primary.main',
-											color: 'white'
+										"&:hover": {
+											backgroundColor: "primary.main",
+											color: "white"
 										}
 									}}
 								>
@@ -199,13 +179,13 @@ const HeroSection = ({ data }: { data: TProfile }) => {
 			<motion.div
 				className='text-[200px] font-bold absolute bottom-0 whitespace-nowrap opacity-10  overflow-visible -z-30 w-[80%]'
 				animate={{
-					translateX: '-450%'
+					translateX: "-450%"
 				}}
 				transition={{
 					duration: 25,
 					repeat: Infinity,
-					repeatType: 'loop',
-					ease: 'linear'
+					repeatType: "loop",
+					ease: "linear"
 				}}
 				aria-hidden
 			>

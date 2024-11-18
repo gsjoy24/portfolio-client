@@ -1,11 +1,10 @@
-import developer from '@/assets/developer.svg';
-import { Box, Container, Stack, Typography } from '@mui/material';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
+import developer from "@/assets/developer.svg";
+import { Box, Container, Stack, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import AnimatedText from "../Shared/AnimatedText";
 
 const About = ({ data }: { data: string }) => {
-	const title = 'About Me'.split(' ');
-	const content = data.split(' ');
 	return (
 		<Container
 			maxWidth='lg'
@@ -15,8 +14,8 @@ const About = ({ data }: { data: string }) => {
 		>
 			<Stack
 				direction={{
-					xs: 'column',
-					md: 'row'
+					xs: "column",
+					md: "row"
 				}}
 				alignItems='center'
 				justifyContent='space-between'
@@ -42,48 +41,23 @@ const About = ({ data }: { data: string }) => {
 				<Box
 					sx={{
 						width: {
-							xs: '100%',
-							md: '50%'
+							xs: "100%",
+							md: "50%"
 						}
 					}}
 				>
 					<Typography
 						variant='h4'
 						sx={{
-							fontWeight: 'bold',
+							fontWeight: "bold",
 							marginBottom: 4
 						}}
 						aria-label='About Me'
 					>
-						{title.map((el: string, i: number) => (
-							<motion.span
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								transition={{
-									duration: 0.25,
-									delay: i / 10
-								}}
-								key={`${el}-${i}`}
-							>
-								{el}{' '}
-							</motion.span>
-						))}
+						<AnimatedText text='About Me' />
 					</Typography>
-					<Typography variant='body1' sx={{ textAlign: 'justify' }}>
-						{content.map((el: string, i: number) => (
-							<motion.span
-								initial={{ opacity: 0, scale: 0.4, color: 'red' }}
-								whileInView={{ opacity: 1, scale: 1, color: 'black' }}
-								transition={{
-									duration: 0.15,
-									delay: i / 40
-								}}
-								viewport={{ once: true }}
-								key={`${el}-${i}`}
-							>
-								{el}{' '}
-							</motion.span>
-						))}
+					<Typography variant='body1' sx={{ textAlign: "justify" }}>
+						<AnimatedText text={data} delay={0.02} />
 					</Typography>
 				</Box>
 			</Stack>
