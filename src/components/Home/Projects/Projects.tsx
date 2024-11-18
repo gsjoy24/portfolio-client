@@ -1,11 +1,10 @@
-'use client';
-import LoadingCompo from '@/components/Loading/LoadingCompo';
-import AnimatedText from '@/components/Shared/AnimatedText';
-import { useGetProjectsQuery } from '@/redux/api/apis';
-import { TProject } from '@/types';
-import { Container, Grid, Typography } from '@mui/material';
-import { motion } from 'framer-motion';
-import SingleProject from './SingleProject';
+"use client";
+import LoadingCompo from "@/components/Loading/LoadingCompo";
+import AnimatedText from "@/components/Shared/AnimatedText";
+import { useGetProjectsQuery } from "@/redux/api/apis";
+import { TProject } from "@/types";
+import { Container, Grid, Typography } from "@mui/material";
+import SingleProject from "./SingleProject";
 
 const Projects = () => {
 	const { data, isLoading } = useGetProjectsQuery({});
@@ -19,7 +18,16 @@ const Projects = () => {
 				py: 12
 			}}
 		>
-			<AnimatedText text='My Projects' variant='h4' sx={{ fontWeight: 'bold', marginBottom: 4 }} />
+			<Typography
+				variant='h4'
+				sx={{
+					fontWeight: "bold",
+					marginBottom: 4
+				}}
+				aria-label='My Projects'
+			>
+				<AnimatedText text='My Projects' variant='h4' sx={{ fontWeight: "bold", marginBottom: 4 }} />
+			</Typography>
 			<Grid container>
 				{data?.data?.map((project: TProject, i: number) => (
 					<Grid
@@ -28,9 +36,9 @@ const Projects = () => {
 						xs={12}
 						md={6}
 						sx={{
-							display: 'flex',
-							justifyContent: 'center',
-							alignItems: 'center'
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center"
 						}}
 					>
 						<SingleProject project={project} delay={i / 10} />

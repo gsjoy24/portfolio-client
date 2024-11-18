@@ -36,7 +36,7 @@ const About = ({ data }: { data: string }) => {
 						delay: 0.5
 					}}
 				>
-					<Image src={developer} alt='developer image' height={340} width={340} />
+					<Image src={developer} alt='developer image' height={440} width={440} />
 				</Box>
 				<Box
 					sx={{
