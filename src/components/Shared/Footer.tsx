@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 
 const Footer = () => {
-	const year = new Date().getFullYear();
+	const currentYear = new Date().getFullYear();
 	return (
 		<Box
 			component='footer'
@@ -13,7 +13,7 @@ const Footer = () => {
 				fontSize: '1rem'
 			}}
 		>
-			&copy; {year} Gour Saha Joy. All rights reserved.
+			&copy; {currentYear} Gour Saha Joy. All rights reserved.
 		</Box>
 	);
 };
