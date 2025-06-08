@@ -9,7 +9,7 @@ import "./globals.css";
 export const metadata: Metadata = {
 	title: "Gour Saha Joy - Full-Stack Web Developer",
 	description:
-		"Gour Saha Joy is a full-stack web developer skilled in JavaScript, React, Next, Redux, Node, Mongodb, PostgreSQL, GraphQl and more. #goursahajoy @goursahajoy",
+		"Gour Saha Joy is a full-stack web developer skilled in JavaScript, React, Next, Redux, Node, Mongodb, PostgreSQL, GraphQl and more. Currently working at Next Label Media. #goursahajoy @goursahajoy",
 	keywords: "Gour Saha Joy, goursahajoy, Full-stack Web Developer in bd",
 	authors: [{ name: "Gour Saha Joy", url: "https://github.com/gsjoy24" }],
 	twitter: {
