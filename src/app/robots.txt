@@ -2,4 +2,4 @@ User-Agent: *
 Allow: /
 Disallow: /private/
 
-Sitemap: https://goursahajoy.me/sitemap.xml
+Sitemap: https://joy.vertoone.com/sitemap.xml
