@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import { dm_sans } from "./fonts";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
 	title: "Gour Saha Joy - Full-Stack Web Developer",
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { readonly children: React.Reac
 		<Providers>
 			<html lang='en'>
 				<GoogleAnalytics />
+				<Analytics />
 				<body className={`${dm_sans.className}`}>
 					<AppRouterCacheProvider>
 						{children}
