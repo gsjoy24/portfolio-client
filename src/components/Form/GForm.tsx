@@ -1,42 +1,54 @@
-import { FieldValues, FormProvider, SubmitHandler, useForm } from 'react-hook-form';
+import {
+  FieldValues,
+  FormProvider,
+  SubmitHandler,
+  useForm,
+} from "react-hook-form";
 type TFormConfig = {
-	resolver?: any;
-	defaultValues?: Record<string, any>;
+  resolver?: any;
+  defaultValues?: Record<string, any>;
 };
 
 type TFormProps = {
-	children: React.ReactNode;
-	onSubmit: SubmitHandler<FieldValues>;
-	resetForm?: boolean;
-	styleClasses?: string;
+  children: React.ReactNode;
+  onSubmit: SubmitHandler<FieldValues>;
+  resetForm?: boolean;
+  styleClasses?: string;
 } & TFormConfig;
 
-const GForm = ({ children, onSubmit, resolver, resetForm, defaultValues, styleClasses }: TFormProps) => {
-	const formConfig: TFormConfig = {};
+const GForm = ({
+  children,
+  onSubmit,
+  resolver,
+  resetForm,
+  defaultValues,
+  styleClasses,
+}: TFormProps) => {
+  const formConfig: TFormConfig = {};
 
-	if (resolver) {
-		formConfig.resolver = resolver;
-	}
+  if (resolver) {
+    formConfig.resolver = resolver;
+  }
 
-	if (defaultValues) {
-		formConfig['defaultValues'] = defaultValues;
-	}
+  if (defaultValues) {
+    formConfig["defaultValues"] = defaultValues;
+  }
 
-	const methods = useForm(formConfig);
+  const methods = useForm(formConfig);
 
-	const { handleSubmit, reset } = methods;
-	const submit: SubmitHandler<FieldValues> = (data) => {
-		reset();
-		onSubmit(data);
-	};
+  const { handleSubmit, reset } = methods;
+  const submit: SubmitHandler<FieldValues> = (data) => {
+    reset();
+    onSubmit(data);
+  };
 
-	return (
-		<FormProvider {...methods}>
-			<form onSubmit={handleSubmit(submit)} className={styleClasses}>
-				{children}
-			</form>
-		</FormProvider>
-	);
+  return (
+    <FormProvider {...methods}>
+      <form onSubmit={handleSubmit(submit)} className={styleClasses}>
+        {children}
+      </form>
+    </FormProvider>
+  );
 };
 
 export default GForm;

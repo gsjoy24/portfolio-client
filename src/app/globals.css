@@ -4,10 +4,10 @@
 
 /* set scroll behavior to smooth */
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-	background: #222831;
-	color: #eeeeee;
+  background: #222831;
+  color: #eeeeee;
 }
